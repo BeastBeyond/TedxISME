@@ -1,0 +1,3961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEDxISME Bangalore — Invisible Barriers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@200;300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #EB0028;
+      --red-dim: #B8001F;
+      --ink: #0A0A0A;
+      --paper: #FFFFFF;
+      --warm: #F5F3EF;
+      --gold: #C9A227;
+      --grey: #6B6B6B;
+      --grey-light: #E4E0D8;
+      --display: 'Anton', sans-serif;
+      --body: 'Inter', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "×";
+      font-family: var(--display);
+      font-size: 18px;
+      color: var(--red);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1.02;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: #fff;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ---------- NAV ---------- */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lockup {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-family: var(--display);
+      font-size: 19px;
+      letter-spacing: 0.02em;
+    }
+
+    .lockup .x {
+      color: var(--red);
+      font-size: 22px;
+    }
+
+    .lockup .isme {
+      color: var(--grey);
+      font-size: 13px;
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+      align-self: center;
+    }
+
+    .tedx-lockup {
+      display: inline-flex;
+      align-items: baseline;
+      white-space: nowrap;
+      font-family: var(--display);
+    }
+
+    .tedx-lockup .ted {
+      position: relative;
+      display: inline-block;
+      color: var(--red);
+      padding-right: 0.03em;
+    }
+
+    .tedx-lockup .xsup {
+      position: absolute;
+      top: -0.28em;
+      right: -0.06em;
+      font-size: 0.34em;
+      color: var(--ink);
+      font-family: var(--body);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .tedx-lockup .isme-txt {
+      margin-left: 0.06em;
+      font-family: var(--body);
+      font-weight: 200;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      font-size: 0.86em;
+    }
+
+    footer .tedx-lockup .isme-txt {
+      color: #fff;
+    }
+
+    footer .tedx-lockup .xsup {
+      color: #fff;
+    }
+
+    .hero .tedx-lockup {
+      font-size: clamp(40px, 8.5vw, 100px);
+    }
+
+    .hero .tedx-lockup .isme-txt {
+      color: #fff;
+    }
+
+    .hero .tedx-lockup .xsup {
+      color: #fff;
+    }
+
+    .x-caption {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .x-caption b {
+      font-family: var(--display);
+      color: var(--red);
+      font-size: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      color: #C9C6C0;
+      transition: border-color .2s, color .2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    .btn {
+      font-family: var(--body);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      padding: 12px 22px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: #fff;
+      padding: 96px 0 80px;
+    }
+
+    .hero::before {
+      content: "×";
+      position: absolute;
+      font-family: var(--display);
+      font-size: 1400px;
+      line-height: 1;
+      color: rgba(235, 0, 40, 0.08);
+      top: -560px;
+      right: -320px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+    }
+
+    .hero .eyebrow::before {
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 108px);
+      color: #fff;
+    }
+
+    .hero h1 .x-glyph {
+      color: var(--red);
+    }
+
+    .hero .theme {
+      font-family: var(--body);
+      font-weight: 800;
+      font-size: clamp(20px, 2.4vw, 28px);
+      color: var(--gold);
+      margin-top: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero p.sub {
+      max-width: 560px;
+      color: #C9C6C0;
+      font-size: 16px;
+      margin-top: 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 38px;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .hero-meta div {
+      border-left: 2px solid var(--red);
+      padding-left: 12px;
+    }
+
+    .hero-meta span {
+      display: block;
+      color: #9A968F;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero .btn-ghost {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .hero .btn-ghost:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* ---------- SECTION SHELL ---------- */
+    section {
+      padding: 88px 0;
+    }
+
+    section.alt {
+      background: var(--warm);
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 52px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 44px);
+    }
+
+    .section-head p {
+      color: var(--grey);
+      font-size: 16px;
+      margin-top: 14px;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media(min-width:820px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-grid h3 {
+      font-size: 15px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      color: var(--red);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .about-grid p {
+      color: #333;
+      font-size: 15px;
+    }
+
+    .rule-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .rule-list li {
+      padding: 10px 0 10px 22px;
+      border-top: 1px solid var(--grey-light);
+      position: relative;
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    .rule-list li:last-child {
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .rule-list li::before {
+      content: "×";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-family: var(--display);
+    }
+
+    /* ---------- 3D WORKS-WHEEL SPEAKERS SECTION ---------- */
+    .speakers-wheel-wrap {
+      position: relative;
+      width: 100%;
+      height: 660px;
+      min-height: 600px;
+      background: radial-gradient(circle at 50% 48%, #1c1c1c 0%, #0a0a0a 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      box-shadow: 0 32px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .wheel-stage {
+      position: absolute;
+      inset: 0;
+      cursor: grab;
+      touch-action: pan-x;
+      outline: none;
+    }
+
+    .wheel-stage:active {
+      cursor: grabbing;
+    }
+
+    .wheel-stage:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: -2px;
+    }
+
+    .wheel-drum {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .wheel-card {
+      position: absolute;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      will-change: transform, opacity;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .wheel-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.7);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .wheel-card.active .wheel-card-inner {
+      border-color: rgba(235, 0, 40, 0.85);
+      box-shadow: 0 24px 55px -10px rgba(235, 0, 40, 0.45), 0 0 0 1px rgba(235, 0, 40, 0.35);
+      transform: scale(1.02);
+    }
+
+    .wheel-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      pointer-events: none;
+      transition: transform 0.4s ease;
+    }
+
+    .wheel-card:hover .wheel-card-img {
+      transform: scale(1.04);
+    }
+
+    .wheel-card-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.3) 55%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .wheel-card-caption {
+      position: absolute;
+      bottom: 16px;
+      left: 18px;
+      right: 18px;
+      pointer-events: none;
+    }
+
+    .wheel-card-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--red);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .wheel-card-title {
+      color: #fff;
+      font-family: var(--body);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    /* Card Placeholder for speakers with photo pending */
+    .wheel-card-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 40%, #202020 0%, #101010 100%);
+      color: #aaa;
+      text-align: center;
+      padding: 24px 20px;
+    }
+
+    .wheel-placeholder-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(235, 0, 40, 0.12);
+      border: 1px solid rgba(235, 0, 40, 0.35);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .wheel-placeholder-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    .wheel-placeholder-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(235, 0, 40, 0.25);
+      border: 1px solid rgba(235, 0, 40, 0.5);
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(235, 0, 40, 0.25);
+    }
+
+    .wheel-placeholder-text {
+      font-family: var(--body);
+      font-size: 13px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    /* Middle Left: Speaker Description Panel */
+    .wheel-bio-panel {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 380px;
+      max-width: calc(100% - 40px);
+      z-index: 25;
+      pointer-events: auto;
+      background: rgba(14, 14, 14, 0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      padding: 26px 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+      color: #fff;
+    }
+
+    .wheel-bio-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(235, 0, 40, 0.15);
+      border: 1px solid rgba(235, 0, 40, 0.35);
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .wheel-bio-name {
+      font-family: var(--display);
+      font-size: clamp(24px, 2.5vw, 32px);
+      line-height: 1.05;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 6px;
+      transition: opacity 0.2s ease;
+    }
+
+    .wheel-bio-role {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      transition: opacity 0.2s ease;
+    }
+
+    .wheel-bio-desc {
+      color: #c9c6c0;
+      font-size: 13px;
+      line-height: 1.6;
+      max-height: 180px;
+      overflow-y: auto;
+      padding-right: 6px;
+      transition: opacity 0.2s ease;
+    }
+
+    .wheel-bio-desc::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .wheel-bio-desc::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .wheel-bio-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--grey);
+    }
+
+    .wheel-nav-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .wheel-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    }
+
+    .wheel-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-1px);
+    }
+
+    /* Top Right: Speaker Names Lineup List */
+    .wheel-lineup-panel {
+      position: absolute;
+      top: 6%;
+      right: 5%;
+      z-index: 25;
+      pointer-events: auto;
+      background: rgba(14, 14, 14, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 16px 20px;
+      text-align: right;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    .wheel-lineup-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .wheel-lineup-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .wheel-lineup-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      background: none;
+      border: none;
+      color: #a8a8a8;
+      font-family: var(--body);
+      font-size: 13px;
+      cursor: pointer;
+      padding: 2px 0;
+      transition: color 0.2s ease, transform 0.2s ease;
+      outline: none;
+    }
+
+    .wheel-lineup-item:hover {
+      color: #fff;
+      transform: translateX(-2px);
+    }
+
+    .wheel-lineup-item.active {
+      color: #fff;
+      font-weight: 700;
+      transform: translateX(-4px);
+    }
+
+    .wheel-lineup-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .wheel-lineup-item.active .wheel-lineup-dot {
+      background: var(--red);
+      transform: scale(1.4);
+      box-shadow: 0 0 10px var(--red);
+    }
+
+    @media(max-width: 960px) {
+      .speakers-wheel-wrap {
+        height: 780px;
+      }
+
+      .wheel-bio-panel {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        transform: none;
+        width: auto;
+        max-width: none;
+        padding: 20px;
+      }
+
+      .wheel-bio-desc {
+        max-height: 90px;
+      }
+
+      .wheel-lineup-panel {
+        top: 16px;
+        right: 16px;
+        padding: 12px 16px;
+      }
+    }
+
+    @media(max-width: 640px) {
+      .speakers-wheel-wrap {
+        height: 720px;
+      }
+
+      .wheel-lineup-panel {
+        display: none;
+      }
+    }
+
+    /* ---------- SCHEDULE ---------- */
+    .schedule {
+      max-width: 820px;
+    }
+
+    .sched-row {
+      display: grid;
+      grid-template-columns: 185px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-top: 1px solid var(--grey-light);
+      align-items: baseline;
+    }
+
+    .sched-row:last-child {
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .sched-time {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--red);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .sched-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .sched-desc {
+      font-size: 13px;
+      color: var(--grey);
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+
+    @media(max-width:640px) {
+      .sched-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    /* ---------- ORGANISERS (FACULTY IMAGE ACCORDION) ---------- */
+    .teachers-accordion {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      max-width: 1140px;
+      margin: 36px auto 10px;
+      height: 480px;
+    }
+
+    .teacher-accordion-card {
+      position: relative;
+      flex: 1 1 0;
+      height: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+      will-change: flex;
+    }
+
+    .teacher-accordion-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+      display: block;
+    }
+
+    .teacher-accordion-card:hover .teacher-accordion-img {
+      transform: scale(1.06);
+    }
+
+    .teacher-accordion-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.3) 45%, transparent 75%);
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    /* Downward left corner badge in blurish format */
+    .teacher-badge {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      z-index: 10;
+      background: rgba(14, 14, 18, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      padding: 12px 18px;
+      max-width: calc(100% - 36px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .teacher-name {
+      font-family: var(--body);
+      font-weight: 700;
+      font-size: 16.5px;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .teacher-designation {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: 861px) {
+      .teacher-accordion-card.active {
+        flex: 3.4 1 0;
+        border-color: rgba(235, 0, 40, 0.55);
+        box-shadow: 0 20px 42px rgba(235, 0, 40, 0.22), 0 10px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .teachers-accordion:hover .teacher-accordion-card {
+        flex: 0.7 1 0;
+        filter: brightness(0.8);
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .teachers-accordion .teacher-accordion-card:hover {
+        flex: 3.6 1 0 !important;
+        filter: brightness(1) !important;
+        border-color: rgba(235, 0, 40, 0.65) !important;
+        box-shadow: 0 20px 48px rgba(235, 0, 40, 0.28), 0 12px 26px rgba(0, 0, 0, 0.5) !important;
+      }
+
+      .teachers-accordion:hover .teacher-accordion-card:not(:hover) .teacher-badge {
+        opacity: 0.2;
+        transform: translateY(6px);
+        filter: blur(2px);
+      }
+
+      .teachers-accordion .teacher-accordion-card:hover .teacher-badge,
+      .teacher-accordion-card.active .teacher-badge {
+        opacity: 1;
+        transform: translateY(0);
+        filter: none;
+      }
+
+      .teachers-accordion:not(:hover) .teacher-accordion-card:not(.active) .teacher-badge {
+        opacity: 0.75;
+        padding: 8px 12px;
+      }
+
+      .teachers-accordion:not(:hover) .teacher-accordion-card:not(.active) .teacher-designation {
+        display: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .teachers-accordion {
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
+      }
+
+      .teacher-accordion-card {
+        height: 320px;
+        width: 100%;
+        flex: none;
+        border-radius: 16px;
+      }
+
+      .teacher-accordion-card.active {
+        border-color: rgba(235, 0, 40, 0.55);
+      }
+    }
+
+    /* ---------- OUR PEOPLE: DYNAMIC BOXES (NAMES IN BOXES, HOVER REVEALS PICTURE) ---------- */
+    .team-section {
+      background: var(--ink);
+      color: #fff;
+      position: relative;
+      padding: 80px 0;
+    }
+
+    .team-section .section-head p {
+      color: #C9C6C0;
+    }
+
+    .team-section h2 {
+      color: #fff;
+    }
+
+    .core-boxes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+      width: 100%;
+    }
+
+    @media (min-width: 1100px) {
+      .core-boxes-grid {
+        grid-template-columns: repeat(24, minmax(0, 1fr));
+        column-gap: 0;
+        row-gap: 22px;
+      }
+
+      .core-box:nth-child(1) {
+        grid-column: 4 / span 6;
+        grid-row: 1;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(2) {
+        grid-column: 10 / span 6;
+        grid-row: 1;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(3) {
+        grid-column: 16 / span 6;
+        grid-row: 1;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(4) {
+        grid-column: 1 / span 6;
+        grid-row: 2;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(5) {
+        grid-column: 7 / span 6;
+        grid-row: 2;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(6) {
+        grid-column: 13 / span 6;
+        grid-row: 2;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(7) {
+        grid-column: 19 / span 6;
+        grid-row: 2;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(8) {
+        grid-column: 4 / span 6;
+        grid-row: 3;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(9) {
+        grid-column: 10 / span 6;
+        grid-row: 3;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(10) {
+        grid-column: 16 / span 6;
+        grid-row: 3;
+        margin-inline: 11px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .core-boxes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .core-boxes-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    .core-box {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      min-height: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      user-select: none;
+    }
+
+    /* Corner frame brackets */
+    .frame-corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(235, 0, 40, 0.7);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .frame-corner-tl {
+      top: 10px;
+      left: 10px;
+      border-right: none;
+      border-bottom: none;
+      border-top-left-radius: 4px;
+    }
+
+    .frame-corner-tr {
+      top: 10px;
+      right: 10px;
+      border-left: none;
+      border-bottom: none;
+      border-top-right-radius: 4px;
+    }
+
+    .frame-corner-bl {
+      bottom: 10px;
+      left: 10px;
+      border-right: none;
+      border-top: none;
+      border-bottom-left-radius: 4px;
+    }
+
+    .frame-corner-br {
+      bottom: 10px;
+      right: 10px;
+      border-left: none;
+      border-top: none;
+      border-bottom-right-radius: 4px;
+    }
+
+    /* Static Photo inside box */
+    .core-box-photo-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .core-box-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .core-box-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 14, 0.9) 0%, rgba(10, 10, 14, 0.3) 45%, transparent 75%);
+      z-index: 3;
+    }
+
+    /* Static Name & Role Badge */
+    .core-box-revealed-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      z-index: 4;
+      background: rgba(14, 14, 18, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .core-badge-name {
+      font-family: var(--body);
+      font-weight: 800;
+      font-size: 15px;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .core-badge-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ---------- SPONSORS (INFINITE AUTO-SLIDER) ---------- */
+    @keyframes scroll-sponsor {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .sponsor-scroll-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 24px 0;
+      mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    .sponsor-infinite-scroll {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: scroll-sponsor 26s linear infinite;
+      will-change: transform;
+    }
+
+    .sponsor-infinite-scroll:hover {
+      animation-play-state: paused;
+    }
+
+    .sponsor-slide-item {
+      flex-shrink: 0;
+      width: 320px;
+      height: 200px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      background: #111116;
+    }
+
+    .sponsor-slide-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      filter: brightness(1.08);
+      border-color: rgba(235, 0, 40, 0.6);
+      box-shadow: 0 20px 45px rgba(235, 0, 40, 0.25), 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .sponsor-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .sponsor-slide-item {
+        width: 260px;
+        height: 165px;
+      }
+    }
+
+    /* ---------- TICKETS (PRICING-02) ---------- */
+    .ticket-grid {
+      display: block;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .pricing-card-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 24px;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .pricing-card-wrap:hover {
+      transform: translateY(-6px);
+    }
+
+    .pricing-card-wrap.featured {
+      z-index: 2;
+    }
+
+    @property --pricing-angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    @keyframes spinPricingBorder {
+      to {
+        --pricing-angle: 360deg;
+      }
+    }
+
+    .pricing-card-wrap.featured::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 26px;
+      background: conic-gradient(from var(--pricing-angle, 0deg), #EB0028, #FF5500, #FBBF24, #EB0028);
+      animation: spinPricingBorder 4s linear infinite;
+      z-index: 0;
+    }
+
+    .pricing-card {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      border: 1px solid var(--grey-light);
+      border-radius: 24px;
+      padding: 38px 32px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .pricing-card-wrap.featured .pricing-card {
+      border-color: transparent;
+      box-shadow: 0 20px 48px rgba(235, 0, 40, 0.14);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(235, 0, 40, 0.08);
+      color: var(--red);
+      border: 1px solid rgba(235, 0, 40, 0.25);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pricing-header {
+      margin-bottom: 20px;
+    }
+
+    .pricing-tier-name {
+      font-family: var(--display);
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .pricing-tier-desc {
+      font-size: 13.5px;
+      color: var(--grey);
+      line-height: 1.5;
+      min-height: 42px;
+    }
+
+    .pricing-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .pricing-currency {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      font-family: var(--display);
+    }
+
+    .pricing-amount {
+      font-size: 52px;
+      font-family: var(--display);
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-period {
+      font-size: 12px;
+      color: var(--grey);
+      font-family: var(--mono);
+    }
+
+    .pricing-rule-note {
+      font-size: 11.5px;
+      color: #8C2200;
+      background: #FFF4E5;
+      border: 1px solid #FFE0B2;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin: 10px 0 16px;
+      font-weight: 500;
+    }
+
+    .pricing-rule-note.guest-note {
+      color: #0E5A35;
+      background: #E8F5E9;
+      border-color: #C8E6C9;
+    }
+
+    .pricing-divider {
+      height: 1px;
+      background: var(--grey-light);
+      margin-bottom: 22px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 30px;
+      flex: 1;
+    }
+
+    .pricing-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 13.5px;
+      color: #2D2D2D;
+      line-height: 1.45;
+    }
+
+    .pricing-check-icon {
+      flex-shrink: 0;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: rgba(235, 0, 40, 0.1);
+      color: var(--red);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .pricing-check-icon svg {
+      width: 11px;
+      height: 11px;
+      stroke-width: 2.5;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .pricing-btn {
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      font-family: var(--body);
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.22s ease;
+      border: 1px solid var(--ink);
+      background: #ffffff;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    .pricing-btn:hover {
+      background: var(--ink);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .pricing-card-wrap.featured .pricing-btn {
+      background: var(--red);
+      border-color: var(--red);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(235, 0, 40, 0.35);
+    }
+
+    .pricing-card-wrap.featured .pricing-btn:hover {
+      background: var(--red-dim);
+      border-color: var(--red-dim);
+      box-shadow: 0 10px 28px rgba(235, 0, 40, 0.45);
+    }
+
+    /* Combined Pricing Card */
+    .combined-card-wrap {
+      width: 100%;
+    }
+
+    .pricing-card.combined-pricing-card {
+      padding: 38px 32px 32px;
+    }
+
+    @media (max-width: 640px) {
+      .pricing-card.combined-pricing-card {
+        padding: 24px 18px 22px;
+      }
+    }
+
+    .combined-tiers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+      align-items: stretch;
+    }
+
+    @media(min-width: 768px) {
+      .combined-tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+    }
+
+    .combined-tier-col {
+      position: relative;
+      border: 1.5px solid var(--grey-light);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      background: #fafaf9;
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .combined-tier-col:hover {
+      border-color: rgba(235, 0, 40, 0.4);
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    .combined-tier-col.selected {
+      border-color: var(--red);
+      background: #ffffff;
+      box-shadow: 0 12px 32px rgba(235, 0, 40, 0.12);
+    }
+
+    .combined-tier-col.featured {
+      background: #ffffff;
+    }
+
+    .combined-tier-radio {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .tier-radio-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #C9C6C0;
+      position: relative;
+      transition: border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .combined-tier-col.selected .tier-radio-circle {
+      border-color: var(--red);
+    }
+
+    .combined-tier-col.selected .tier-radio-circle::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .combined-tier-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .combined-tier-col.selected .combined-tier-tag {
+      color: var(--red);
+    }
+
+    .combined-action-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 6px;
+      text-align: center;
+    }
+
+    .pricing-btn.combined-buy-btn {
+      max-width: 440px;
+      width: 100%;
+      padding: 16px 36px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      background: var(--red);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(235, 0, 40, 0.38);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .pricing-btn.combined-buy-btn:hover {
+      background: var(--red-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(235, 0, 40, 0.48);
+    }
+
+    .combined-action-note {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--grey);
+      margin-top: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-item {
+      border-top: 1px solid var(--grey-light);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-q::after {
+      content: "+";
+      font-family: var(--display);
+      color: var(--red);
+      font-size: 20px;
+    }
+
+    .faq-item.open .faq-q::after {
+      content: "–";
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 14px;
+      color: var(--grey);
+      transition: max-height .25s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding-top: 12px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--ink);
+      color: #fff;
+      padding: 56px 0 32px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #262626;
+    }
+
+    footer .lockup {
+      color: #fff;
+    }
+
+    .footer-cols {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9A968F;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13.5px;
+      color: #D8D5CF;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover {
+      color: var(--red);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 24px;
+      font-size: 12px;
+      color: #7A776F;
+    }
+
+    /* ---------- LOCATION MAP COMPONENT (FOOTER / VENUE) ---------- */
+    .location-map-wrap {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      perspective: 1000px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .location-map-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #141416;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: 250px;
+      height: 140px;
+      transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), height 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .location-map-wrap.expanded .location-map-card {
+      width: 320px;
+      height: 250px;
+    }
+
+    .location-map-bg-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .location-map-wrap.expanded .location-map-bg-grid {
+      opacity: 0;
+    }
+
+    .location-map-expanded-view {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease 0.1s;
+      background: #18181b;
+      border-radius: 18px;
+    }
+
+    .location-map-wrap.expanded .location-map-expanded-view {
+      opacity: 1;
+    }
+
+    .location-map-inner {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 16px 18px;
+    }
+
+    .location-map-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .location-map-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #D8D5CF;
+      letter-spacing: 0.06em;
+    }
+
+    .location-map-pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 8px var(--red);
+    }
+
+    .location-map-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      transition: transform 0.2s ease;
+    }
+
+    .location-map-coords {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #9A968F;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .location-map-wrap.expanded .location-map-coords {
+      display: block;
+    }
+
+    .location-map-link {
+      display: none;
+      font-size: 11.5px;
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: 6px;
+      pointer-events: auto;
+    }
+
+    .location-map-wrap.expanded .location-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .location-map-line {
+      height: 1px;
+      background: linear-gradient(to right, rgba(235, 0, 40, 0.6), rgba(235, 0, 40, 0.2), transparent);
+      margin-top: 8px;
+      transform-origin: left;
+      transform: scaleX(0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .location-map-wrap:hover .location-map-line,
+    .location-map-wrap.expanded .location-map-line {
+      transform: scaleX(1);
+    }
+
+    .location-map-hint {
+      font-size: 10px;
+      color: #9A968F;
+      margin-top: 6px;
+      font-family: var(--mono);
+      transition: opacity 0.2s;
+    }
+
+    .location-map-wrap.expanded .location-map-hint {
+      opacity: 0;
+    }
+
+    /* ---------- MODAL / CHECKOUT ---------- */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+    }
+
+    .overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      max-height: 92vh;
+      overflow-y: auto;
+      position: relative;
+      border-top: 5px solid var(--red);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 26px 0;
+    }
+
+    .modal-title {
+      font-family: var(--display);
+      font-size: 22px;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-family: var(--display);
+      font-size: 22px;
+      color: var(--grey);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: var(--red);
+    }
+
+    .modal-body {
+      padding: 20px 26px 28px;
+    }
+
+    .steps {
+      display: flex;
+      gap: 6px;
+      padding: 0 26px;
+      margin-top: 14px;
+    }
+
+    .step-dot {
+      flex: 1;
+      height: 3px;
+      background: var(--grey-light);
+    }
+
+    .step-dot.active {
+      background: var(--red);
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--grey-light);
+      font-family: var(--body);
+      font-size: 14px;
+      background: var(--warm);
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--red);
+      outline: none;
+      background: #fff;
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--grey-light);
+      width: fit-content;
+    }
+
+    .qty-control button {
+      width: 38px;
+      height: 38px;
+      background: var(--warm);
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: var(--display);
+    }
+
+    .qty-control span {
+      width: 44px;
+      text-align: center;
+      font-family: var(--mono);
+      font-weight: 600;
+    }
+
+    .tier-select {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tier-opt {
+      border: 1px solid var(--grey-light);
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .tier-opt.selected {
+      border-color: var(--red);
+      background: var(--warm);
+    }
+
+    .tier-opt-name {
+      font-weight: 700;
+    }
+
+    .tier-opt-price {
+      font-family: var(--mono);
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      padding: 8px 0;
+      color: var(--grey);
+    }
+
+    .summary-line.total {
+      border-top: 1px solid var(--grey-light);
+      margin-top: 8px;
+      padding-top: 14px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .pay-methods {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .pay-methods button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--grey-light);
+      background: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--body);
+    }
+
+    .pay-methods button.active {
+      border-color: var(--red);
+      color: var(--red);
+      background: var(--warm);
+    }
+
+    .demo-note {
+      font-size: 11.5px;
+      color: var(--grey);
+      background: var(--warm);
+      border: 1px dashed var(--grey-light);
+      padding: 10px 12px;
+      margin-top: 6px;
+      margin-bottom: 18px;
+      font-family: var(--mono);
+    }
+
+    .confirm-wrap {
+      text-align: center;
+      padding: 10px 0 6px;
+    }
+
+    .confirm-x {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-size: 30px;
+      margin: 0 auto 20px;
+    }
+
+    .ticket-id {
+      font-family: var(--mono);
+      font-size: 13px;
+      background: var(--warm);
+      padding: 12px;
+      margin: 18px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .err {
+      color: var(--red);
+      font-size: 12px;
+      margin-top: -10px;
+      margin-bottom: 14px;
+      display: none;
+    }
+
+    .err.show {
+      display: block;
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .anim-fade-up {
+      opacity: 0;
+      animation: fadeUp .65s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    .anim-fade-up.d1 {
+      animation-delay: .08s;
+    }
+
+    .anim-fade-up.d2 {
+      animation-delay: .18s;
+    }
+
+    .anim-fade-up.d3 {
+      animation-delay: .28s;
+    }
+
+    .anim-fade-up.d4 {
+      animation-delay: .40s;
+    }
+
+    .anim-fade-up.d5 {
+      animation-delay: .52s;
+    }
+
+    .anim-fade-up.d6 {
+      animation-delay: .64s;
+    }
+
+    /* scroll-reveal: items start invisible and become visible via JS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s cubic-bezier(.22, 1, .36, 1), transform .6s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* staggered reveal for grids */
+    .reveal-stagger .speaker-card,
+    .reveal-stagger .org-card,
+    .reveal-stagger .ticket-card,
+    .reveal-stagger .core-box {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .55s cubic-bezier(.22, 1, .36, 1), transform .55s cubic-bezier(.22, 1, .36, 1), border-color .25s, background .2s, box-shadow .25s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(1),
+    .reveal-stagger.visible .org-card:nth-child(1),
+    .reveal-stagger.visible .ticket-card:nth-child(1),
+    .reveal-stagger.visible .core-box:nth-child(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .04s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(2),
+    .reveal-stagger.visible .org-card:nth-child(2),
+    .reveal-stagger.visible .ticket-card:nth-child(2),
+    .reveal-stagger.visible .core-box:nth-child(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .08s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(3),
+    .reveal-stagger.visible .org-card:nth-child(3),
+    .reveal-stagger.visible .ticket-card:nth-child(3),
+    .reveal-stagger.visible .core-box:nth-child(3) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .12s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(4),
+    .reveal-stagger.visible .org-card:nth-child(4),
+    .reveal-stagger.visible .ticket-card:nth-child(4),
+    .reveal-stagger.visible .core-box:nth-child(4) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .16s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(5),
+    .reveal-stagger.visible .org-card:nth-child(5),
+    .reveal-stagger.visible .core-box:nth-child(5) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .20s;
+    }
+
+    .reveal-stagger.visible .speaker-card:nth-child(6),
+    .reveal-stagger.visible .org-card:nth-child(6),
+    .reveal-stagger.visible .core-box:nth-child(6) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .24s;
+    }
+
+    .reveal-stagger.visible .core-box:nth-child(n+7) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .28s;
+    }
+
+    /* Nav links hover */
+    .nav-links a {
+      transition: border-color .2s, color .2s;
+    }
+
+    /* Button active press */
+    .btn:active {
+      transform: scale(0.97) translateY(0) !important;
+    }
+
+    /* Hero background cross animation */
+    @keyframes driftCross {
+      0% {
+        opacity: 0.08;
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        opacity: 0.11;
+        transform: translate(-18px, 12px) scale(1.03);
+      }
+
+      100% {
+        opacity: 0.08;
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    .hero::before {
+      animation: driftCross 14s ease-in-out infinite;
+    }
+
+    /* reduced motion */
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal,
+      .reveal-stagger .speaker-card,
+      .reveal-stagger .org-card,
+      .reveal-stagger .ticket-card,
+      .reveal-stagger .team-card {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Nav and footer logo image */
+    .nav-logo-img {
+      height: clamp(44px, 5.5vw, 68px);
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: clamp(52px, 6.5vw, 80px);
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ---------- VERTICAL RIGHT-SIDE DOCK ---------- */
+    .dock-container {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+      left: auto;
+      z-index: 80;
+      pointer-events: none;
+    }
+
+    .dock-panel {
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 64px;
+      height: auto;
+      padding: 14px 10px;
+      background: rgba(14, 14, 14, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 26px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      user-select: none;
+    }
+
+    .dock-item {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+      flex-shrink: 0;
+      transition: width .15s cubic-bezier(.22, 1, .36, 1), height .15s cubic-bezier(.22, 1, .36, 1), background .2s, border-color .2s, transform .2s;
+    }
+
+    .dock-item:hover,
+    .dock-item:focus-visible {
+      background: rgba(235, 0, 40, 0.25);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    .dock-item.dock-cta {
+      background: rgba(235, 0, 40, 0.85);
+      border-color: var(--red);
+    }
+
+    .dock-item.dock-cta:hover {
+      background: var(--red);
+    }
+
+    .dock-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52%;
+      height: 52%;
+      pointer-events: none;
+    }
+
+    .dock-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .dock-label {
+      position: absolute;
+      right: calc(100% + 14px);
+      top: 50%;
+      bottom: auto;
+      left: auto;
+      transform: translateY(-50%) translateX(6px);
+      background: rgba(10, 10, 10, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      white-space: pre;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      letter-spacing: 0.01em;
+    }
+
+    .dock-item:hover .dock-label,
+    .dock-item:focus-visible .dock-label {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    @media(max-width:640px) {
+      .dock-container {
+        right: 10px;
+      }
+
+      .dock-panel {
+        gap: 8px;
+        padding: 10px 8px;
+        width: 54px;
+        border-radius: 20px;
+      }
+
+      .dock-item {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" aria-label="TEDxISME Bangalore home">
+        <img src="tedx-logo-transparent.png" alt="TEDxISME Bangalore" class="nav-logo-img">
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow anim-fade-up d1">Independently organized · Under license from TED</p>
+      <div class="anim-fade-up d2" style="display:inline-block;margin-bottom:14px;max-width:100%;">
+        <img src="tedx-logo-transparent.png" alt="TEDxISME Bangalore"
+          style="height:clamp(84px,14vw,156px);max-width:100%;width:auto;object-fit:contain;display:block;">
+      </div>
+      <p class="theme anim-fade-up d3">"Invisible Barriers"</p>
+      <p class="sub anim-fade-up d4">Invisible barriers are obstacles that are not always visible but can have a strong
+        impact on people’s lives, opportunities, and growth. Unlike physical barriers, they exist in the form of
+        beliefs, attitudes, stereotypes, discrimination, social expectations, and unequal access to opportunities. These
+        barriers can affect individuals, workplaces, communities, and society as a whole.</p>
+      <div class="hero-meta anim-fade-up d5">
+        <div><span>Date</span>Sat, 28 Nov 2026</div>
+        <div><span>Time</span>8:30 AM – 2:30 PM</div>
+        <div><span>Venue</span>ISME Auditorium, Bangalore</div>
+        <div><span>Capacity</span>100 seats</div>
+      </div>
+      <div class="hero-actions anim-fade-up d6">
+        <a href="#tickets" class="btn btn-primary">Get Tickets →</a>
+        <a href="#speakers" class="btn btn-ghost">Meet the Speakers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">About the Event</p>
+        <h2>Ideas, in one room</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <h3>What is TEDx?</h3>
+          <p>TEDx is a program of local, self-organized events that bring people together to share a TED-like
+            experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and
+            connection. TEDxISME Bangalore is one such independently organized event, produced under a free license
+            granted by TED — with content, speakers and staging shaped entirely by our own team, not TED itself.</p>
+          <ul class="rule-list">
+            <li>Community-driven, not commercial or political</li>
+            <li>A diversity of topics and voices, not a single field</li>
+            <li>Curated first-time speakers, not professional circuit talkers</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Why ISME, why now</h3>
+          <p>ISME Bangalore has hosted conversations on business, design and society for over a decade. TEDxISME extends
+            that tradition onto a global format — pairing our campus community with voices from science, art, policy and
+            enterprise who rarely share a stage. This edition's theme, <strong>"Invisible Barriers,"</strong> asks five
+            speakers to challenge one assumption each of us is carrying into the next decade.</p>
+          <ul class="rule-list">
+            <li>5 curated talks across one afternoon</li>
+            <li>Live performance interlude</li>
+            <li>Post-event networking with speakers &amp; organisers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section id="speakers" class="alt" style="padding: 72px 0 80px;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Speakers</p>
+        <h2>Five voices, one afternoon</h2>
+        <p>Discover our five distinguished speakers breaking invisible barriers. Drag or click any speaker in the lineup
+          to turn the 3D wheel.</p>
+      </div>
+      <div class="speakers-wheel-wrap reveal" id="speakersWheelStage" tabindex="0" role="region"
+        aria-label="Interactive 3D Speakers Carousel"></div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Schedule</p>
+        <h2>The day, mapped out</h2>
+      </div>
+      <div class="schedule reveal" id="scheduleList"></div>
+    </div>
+  </section>
+
+  <!-- ORGANISERS -->
+  <section id="organisers" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Organising Team</p>
+        <h2>Who's behind the curtain</h2>
+        <p>A volunteer team of ISME faculty producing the event independently, top to bottom.</p>
+      </div>
+      <div class="teachers-accordion reveal-stagger" id="teachersAccordion" role="region"
+        aria-label="Organising faculty gallery"></div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM: CORE MEMBER TEAM -->
+  <section id="our-team" class="team-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow" style="color:var(--gold);">Our People</p>
+        <h2 style="color:#fff;">The People Behind the Ideas</h2>
+        <p>Meet the dedicated student core team bringing TEDxISME Bangalore to life.</p>
+      </div>
+
+      <!-- Static Student Photo Gallery -->
+      <div class="core-boxes-grid reveal-stagger" id="coreBoxesGrid" role="region" aria-label="Core team gallery"></div>
+    </div>
+  </section>
+
+  <!-- SPONSORS & PARTNERS -->
+  <section id="sponsors">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Sponsors &amp; Partners</p>
+        <h2>Made possible with</h2>
+        <p>TEDx events run on community support, not ticket profit — sponsorship covers venue, production and speaker
+          hospitality.</p>
+      </div>
+      <!-- Infinite Auto-Slider Container (5 Coming Soon Slides in Seamless Loop) -->
+      <div class="sponsor-scroll-container reveal" id="sponsorSliderContainer" role="region"
+        aria-label="Sponsors and partners marquee">
+        <div class="sponsor-infinite-scroll" id="sponsorSliderTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKETS -->
+  <section id="tickets" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Tickets</p>
+        <h2>Reserve your seat</h2>
+        <p>All tickets are priced at cost, in line with TEDx guidelines — no profit is made on ticket sales.</p>
+      </div>
+      <div class="ticket-grid reveal" id="ticketGrid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Good to know</h2>
+      </div>
+      <div style="max-width:720px" id="faqList"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <img src="tedx-logo-transparent.png" alt="TEDxISME Bangalore" class="footer-logo-img">
+          <a href="https://maps.app.goo.gl/YQ2htbhUdt92s8ku6?g_st=aw" target="_blank" rel="noopener noreferrer"
+            style="color:#9A968F;font-size:13px;max-width:280px;margin-top:14px;display:inline-block;transition:color .2s;"
+            onmouseover="this.style.color='#EB0028'" onmouseout="this.style.color='#9A968F'">
+            ISME Auditorium, Bangalore · Sat, 28 Nov 2026 ↗
+          </a>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Event</h4>
+            <a href="#speakers">Speakers</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#organisers">Organisers</a>
+            <a href="#our-team">Our Team</a>
+            <a href="#sponsors">Sponsors</a>
+          </div>
+          <div class="footer-col">
+            <h4>Tickets</h4>
+            <a href="#tickets">Buy tickets</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:manasar@gmail.com">manasar@isme.in</a>
+            <a href="tel:+919731491531">9731491531</a>
+          </div>
+          <div class="footer-col footer-col-map">
+            <h4>Location</h4>
+            <div class="location-map-wrap" tabindex="0" role="region" aria-label="Interactive Venue Location Map">
+              <div class="location-map-card">
+                <div class="location-map-bg-grid">
+                  <svg width="100%" height="100%" style="position:absolute;inset:0;">
+                    <defs>
+                      <pattern id="footerGridPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+                        <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.5" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#footerGridPattern)" />
+                  </svg>
+                </div>
+                <div class="location-map-expanded-view">
+                  <svg width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0;">
+                    <line x1="0%" y1="35%" x2="100%" y2="35%" stroke="rgba(255,255,255,0.22)" stroke-width="3" />
+                    <line x1="0%" y1="65%" x2="100%" y2="65%" stroke="rgba(255,255,255,0.22)" stroke-width="3" />
+                    <line x1="30%" y1="0%" x2="30%" y2="100%" stroke="rgba(255,255,255,0.18)" stroke-width="3" />
+                    <line x1="70%" y1="0%" x2="70%" y2="100%" stroke="rgba(255,255,255,0.18)" stroke-width="3" />
+                    <line x1="0%" y1="50%" x2="100%" y2="50%" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+                    <line x1="50%" y1="0%" x2="50%" y2="100%" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+                  </svg>
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      style="filter:drop-shadow(0 0 8px rgba(235,0,40,0.8));">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                        fill="#EB0028" />
+                      <circle cx="12" cy="9" r="2.5" fill="#ffffff" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="location-map-inner">
+                  <div class="location-map-top">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EB0028" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      style="filter:drop-shadow(0 0 6px rgba(235,0,40,0.5));">
+                      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+                      <line x1="9" y1="3" y2="18" />
+                      <line x1="15" y1="6" y2="21" />
+                    </svg>
+                    <div class="location-map-badge">
+                      <span class="location-map-pulse-dot"></span>
+                      <span>Venue</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="location-map-title">ISME Bangalore</div>
+                    <div class="location-map-coords">12.8797° N, 77.7441° E</div>
+                    <a href="https://maps.app.goo.gl/YQ2htbhUdt92s8ku6?g_st=aw" target="_blank"
+                      rel="noopener noreferrer" class="location-map-link">
+                      Open in Google Maps →
+                    </a>
+                    <div class="location-map-line"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="location-map-hint">Click to expand map</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>This independent TEDx event is operated under license from TED.</span>
+        <span>© 2026 TEDxISME Bangalore — Sample landing page for demonstration.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- APPLE-STYLE DOCK -->
+  <div class="dock-container" id="appDock" role="toolbar" aria-label="Application dock">
+    <div class="dock-panel">
+      <a href="#" class="dock-item" aria-label="Home">
+        <span class="dock-label">Home</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </span>
+      </a>
+      <a href="#speakers" class="dock-item" aria-label="Speakers">
+        <span class="dock-label">Speakers</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="m7.5 4.27 9 5.15" />
+            <path
+              d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+            <path d="m3.3 7 8.7 5 8.7-5" />
+            <path d="M12 22V12" />
+          </svg>
+        </span>
+      </a>
+      <a href="#schedule" class="dock-item" aria-label="Schedule">
+        <span class="dock-label">Schedule</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" />
+            <path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" />
+            <path d="18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" />
+            <path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" />
+          </svg>
+        </span>
+      </a>
+      <a href="#organisers" class="dock-item" aria-label="Organisers">
+        <span class="dock-label">Organisers</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </span>
+      </a>
+      <a href="#our-team" class="dock-item" aria-label="Our Team">
+        <span class="dock-label">Our Team</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+        </span>
+      </a>
+      <a href="#tickets" class="dock-item dock-cta" aria-label="Get Tickets">
+        <span class="dock-label">Get Tickets</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+            <path d="M13 5v2" />
+            <path d="M13 17v2" />
+            <path d="M13 11v2" />
+          </svg>
+        </span>
+      </a>
+      <a href="#faq" class="dock-item" aria-label="FAQ">
+        <span class="dock-label">FAQ</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4" />
+            <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+            <path d="M15 8h-5" />
+            <path d="M15 12h-5" />
+          </svg>
+        </span>
+      </a>
+      <a href="mailto:manasar@gmail.com" class="dock-item" aria-label="Contact">
+        <span class="dock-label">Email</span>
+        <span class="dock-icon">
+          <svg viewBox="0 0 24 24">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="modal-head">
+        <span class="modal-title" id="modalTitle">Get Tickets</span>
+        <button class="modal-close" onclick="closeCheckout()">×</button>
+      </div>
+      <div class="steps">
+        <div class="step-dot active" id="dot1"></div>
+        <div class="step-dot" id="dot2"></div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    /*
+      Runtime configuration is supplied during deployment. Secrets must remain in
+      the backend environment and never belong in this HTML file.
+    */
+    const BACKEND_CONFIG = Object.assign(
+      { apiBaseUrl: '', checkoutEndpoint: '/api/checkout' },
+      window.TEDX_API_CONFIG || {}
+    );
+    /* ---------------- 5 FEATURED SPEAKERS & 3D WORKS-WHEEL ---------------- */
+    const speakers = [
+      {
+        n: "Dr. Nitin Garg",
+        role: "Founding Director, ISME Bangalore · IIT Bombay, CMU & IIM Lucknow",
+        description: "Dr. Nitin Garg holds an MBA from Tepper School of Business at Carnegie Mellon University (USA), B.Tech and M.Tech in Mechanical Engineering from IIT Bombay, and a Ph.D. from IIM Lucknow. Founding Director of ISME Bangalore, he was honored with the International Achievers Award for Education Excellence. Formerly a senior leader at Deloitte Consulting in Philadelphia, he advises enterprise leaders on strategy, technology, and organizational transformation.",
+        photo: "Speaker/Dr. Nitin Garg.png"
+      },
+      {
+        n: "Padma Parthasarathy",
+        role: "Independent Director & Corporate Leader · Forbes Self-Made Women List",
+        description: "Padma Parthasarathy is an Independent Director and senior corporate leader with nearly 40 years of global experience in digital transformation, consulting, technology, and corporate strategy. An alumna of IIM Ahmedabad and former leader of Global Consulting and Digital businesses at Tech Mahindra, she serves on boards including TNS India Foundation and Action NorthEast Trust, and was recognized on Forbes India's Women Power list.",
+        photo: "Speaker/Padma Parthasarathy.png"
+      },
+      {
+        n: "Dr. Sibichen K. Mathew",
+        role: "Former Director General, IRS · Author, Cybercrime & Governance Expert",
+        description: "Sibichen Mathew is a former Director General in the Indian Revenue Service (IRS), holding a Ph.D. in Sociology/Public Finance, an LLB, and an IIM Bangalore postgraduate qualification. An acclaimed author and TEDx speaker, his published works include 'You Just Got Cheated', 'When the Boss Is Wrong', and 'Making People Pay'. He is a Distinguished Toastmaster and recognized authority on white-collar crime and governance.",
+        photo: "Speaker/Sibichen Mathew.png"
+      },
+      {
+        n: "Dr. Apurva Mittal",
+        role: "Consultant Psychiatrist & NIMHANS Fellow · Amaha Health",
+        description: "Dr. Apurva Mittal is a Bengaluru-based psychiatrist with 9 years of experience practicing at Amaha Health. Having completed her senior residency and fellowship at NIMHANS, her clinical work focuses on dementia, mild cognitive impairment, non-invasive brain stimulation, adult ADHD, mood disorders, and women’s mental health. She actively contributes to community mental health awareness and evidence-based patient advocacy.",
+        photo: "Speaker/Dr. Apurva Mittal.png"
+      },
+      {
+        n: "Samaira Garg",
+        role: "Founder, Made Again · Student Researcher & John Locke Prize Awardee",
+        description: "Samaira Garg is the founder of Made Again, an impactful sustainability initiative, a student researcher, and a John Locke Essay Prize awardee. Her work examines the intersection of education, inequality, and opportunity. Through Made Again and her independent research with migrant workers in Bengaluru, she explores socio-economic disparities and challenges conventional assumptions to dismantle invisible barriers.",
+        photo: "Speaker/Samaira-Garg.png"
+      }
+    ];
+
+    (function initSpeakersWheel() {
+      const container = document.getElementById("speakersWheelStage");
+      if (!container) return;
+
+      const count = speakers.length;
+      let activeIndex = 0;
+
+      // Render DOM structure: 3D stage with drum, middle-left bio panel, top-right lineup (watermark removed)
+      container.innerHTML = `
+    <div class="wheel-stage" role="region" aria-label="3D Speakers Carousel">
+      <div class="wheel-drum"></div>
+    </div>
+    
+    <!-- MIDDLE LEFT CORNER: SPEAKER BIO & DESCRIPTION -->
+    <div class="wheel-bio-panel" id="wheelBioPanel">
+      <div class="wheel-bio-pill" id="wheelBioPill">SPEAKER 01 / 05</div>
+      <h3 class="wheel-bio-name" id="wheelBioName">${speakers[0].n}</h3>
+      <div class="wheel-bio-role" id="wheelBioRole">${speakers[0].role}</div>
+      <div class="wheel-bio-desc" id="wheelBioDesc">${speakers[0].description}</div>
+      <div class="wheel-bio-foot">
+        <span>Drag to rotate</span>
+        <div class="wheel-nav-btns">
+          <button type="button" class="wheel-btn" id="wheelPrevBtn" aria-label="Previous speaker">↑</button>
+          <button type="button" class="wheel-btn" id="wheelNextBtn" aria-label="Next speaker">↓</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP RIGHT CORNER: SPEAKER NAMES LIST -->
+    <div class="wheel-lineup-panel">
+      <div class="wheel-lineup-label">Featured Lineup</div>
+      <ul class="wheel-lineup-list" id="wheelLineupList">
+        ${speakers.map((s, idx) => `
+          <li>
+            <button type="button" class="wheel-lineup-item${idx === 0 ? " active" : ""}" data-idx="${idx}">
+              <span>${s.n}</span>
+              <span class="wheel-lineup-dot"></span>
+            </button>
+          </li>
+        `).join("")}
+      </ul>
+    </div>
+  `;
+
+      const stage = container.querySelector(".wheel-stage");
+      const drum = container.querySelector(".wheel-drum");
+      const bioPill = document.getElementById("wheelBioPill");
+      const bioName = document.getElementById("wheelBioName");
+      const bioRole = document.getElementById("wheelBioRole");
+      const bioDesc = document.getElementById("wheelBioDesc");
+      const lineupItems = container.querySelectorAll(".wheel-lineup-item");
+
+      // Create cards with photo or "Will update soon" placeholder
+      const cards = speakers.map((s, i) => {
+        const card = document.createElement("div");
+        card.className = "wheel-card" + (i === 0 ? " active" : "");
+        card.setAttribute("data-index", i);
+
+        const mediaHtml = s.photo ? `
+      <img class="wheel-card-img" src="${encodeURI(s.photo)}" alt="${s.n}" draggable="false" />
+      <div class="wheel-card-grad"></div>
+    ` : `
+      <div class="wheel-card-placeholder">
+        <div class="wheel-placeholder-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="wheel-placeholder-badge">Will update soon</div>
+        <div class="wheel-placeholder-text">Photo in progress</div>
+      </div>
+      <div class="wheel-card-grad"></div>
+    `;
+
+        card.innerHTML = `
+      <div class="wheel-card-inner">
+        ${mediaHtml}
+        <div class="wheel-card-caption">
+          <span class="wheel-card-num">Speaker ${String(i + 1).padStart(2, "0")}</span>
+          <div class="wheel-card-title">${s.n}</div>
+        </div>
+      </div>
+    `;
+        card.addEventListener("click", () => to(i + 1));
+        drum.appendChild(card);
+        return card;
+      });
+
+      // Geometry metrics
+      const CARD_H_RATIO = 0.44;
+      const CARD_RATIO = 0.88;
+      const CARD_MAX_W = 0.30;
+      const STEP = 46;
+      const DRUM = 2.15;
+      const LENS = 2.8;
+      const CULL = 1.8;
+      const DRAG_UNITS = 400;
+      const EASE = 0.095;
+
+      let stageW = container.clientWidth;
+      let stageH = container.clientHeight;
+      let cardW = 280;
+      let cardH = 320;
+      let drumR = 600;
+
+      function updateMetrics() {
+        stageW = container.clientWidth;
+        stageH = container.clientHeight;
+        const isMobile = stageW <= 640;
+        cardW = Math.min(stageH * CARD_H_RATIO * CARD_RATIO, stageW * (isMobile ? 0.65 : CARD_MAX_W), 360);
+        cardH = cardW / CARD_RATIO;
+        drumR = cardH * DRUM;
+        const depth = cardH * LENS;
+        stage.style.perspective = depth + "px";
+
+        cards.forEach(c => {
+          c.style.width = cardW + "px";
+          c.style.height = cardH + "px";
+          c.style.marginLeft = (-cardW / 2) + "px";
+          c.style.marginTop = (-cardH / 2) + "px";
+        });
+      }
+
+      updateMetrics();
+      const ro = new ResizeObserver(updateMetrics);
+      ro.observe(container);
+
+      // Wheel animation variables
+      let turn = 0;
+      let target = 0;
+      const last = count - 1;
+      let lastTime = performance.now();
+
+      function to(next) {
+        target = Math.max(0, Math.min(last + 1, next));
+      }
+
+      function setActiveSpeaker(idx) {
+        if (activeIndex === idx) return;
+        activeIndex = idx;
+        const s = speakers[idx];
+        if (!s) return;
+
+        // Update bio with smooth transition
+        bioPill.textContent = `SPEAKER ${String(idx + 1).padStart(2, "0")} / ${String(count).padStart(2, "0")}`;
+        bioName.style.opacity = "0.2";
+        bioRole.style.opacity = "0.2";
+        bioDesc.style.opacity = "0.2";
+
+        setTimeout(() => {
+          bioName.textContent = s.n;
+          bioRole.textContent = s.role;
+          bioDesc.textContent = s.description;
+          bioName.style.opacity = "1";
+          bioRole.style.opacity = "1";
+          bioDesc.style.opacity = "1";
+        }, 120);
+
+        // Update lineup list
+        lineupItems.forEach((btn, i) => {
+          if (i === idx) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+      }
+
+      // High-performance single rAF loop
+      let animId = null;
+      function draw(now) {
+        animId = requestAnimationFrame(draw);
+        const dt = Math.min(now - lastTime, 32);
+        lastTime = now;
+
+        const gap = target - turn;
+        const frameEase = 1 - Math.pow(1 - EASE, dt / 16.67);
+        if (Math.abs(gap) < 0.0003) {
+          turn = target;
+        } else {
+          turn += gap * frameEase;
+        }
+
+        const t = turn;
+        const m = Math.max(0, Math.min(1, t));
+        const pos = Math.max(0, t - 1);
+
+        drum.style.transform = `translate3d(0, 0, ${-m * drumR}px)`;
+
+        for (let i = 0; i < count; i++) {
+          const d = i - pos;
+          const drumDeg = d * STEP;
+          const card = cards[i];
+          if (card) {
+            card.style.transform = `rotateX(${m * drumDeg}deg) translateZ(${m * drumR}px)`;
+            const dist = Math.abs(d);
+            const isHidden = m > 0.4 && dist > CULL;
+            card.style.opacity = isHidden ? "0" : String(Math.max(0.1, Math.min(1, 1 - (dist - 0.7) * 0.75)));
+            card.style.zIndex = Math.round(100 - dist * 4);
+            card.style.pointerEvents = (isHidden || dist > 0.6) ? "none" : "auto";
+            if (Math.round(pos) === i) {
+              card.classList.add("active");
+            } else {
+              card.classList.remove("active");
+            }
+          }
+        }
+
+        const near = Math.max(0, Math.min(last, Math.round(pos)));
+        if (near !== activeIndex) {
+          setActiveSpeaker(near);
+        }
+      }
+
+      animId = requestAnimationFrame(draw);
+
+      // NOTE: Scroll interception (wheel listener) is removed so page scrolling is never hijacked.
+      // Navigation is powered by smooth drag gesture, keyboard arrows, and lineup clicks.
+
+      // Pointer drag interaction
+      let dragData = null;
+      stage.addEventListener("pointerdown", (e) => {
+        dragData = { y: e.clientY, time: performance.now(), v: 0 };
+        stage.setPointerCapture(e.pointerId);
+      });
+
+      stage.addEventListener("pointermove", (e) => {
+        if (!dragData) return;
+        const now = performance.now();
+        const dt = Math.max(1, now - dragData.time);
+        const dy = dragData.y - e.clientY;
+        dragData.v = dy / dt;
+        to(target + dy / DRAG_UNITS);
+        dragData.y = e.clientY;
+        dragData.time = now;
+      });
+
+      stage.addEventListener("pointerup", () => {
+        if (!dragData) return;
+        const toss = Math.max(-1.2, Math.min(1.2, dragData.v * 12));
+        dragData = null;
+        if (target > 0.8) {
+          to(Math.round(target + toss));
+        } else {
+          to(Math.round(target));
+        }
+      });
+
+      // Buttons & Lineup clicks
+      document.getElementById("wheelPrevBtn").addEventListener("click", () => {
+        to(Math.max(1, activeIndex));
+      });
+
+      document.getElementById("wheelNextBtn").addEventListener("click", () => {
+        to(Math.min(last + 1, activeIndex + 2));
+      });
+
+      lineupItems.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.getAttribute("data-idx"), 10);
+          to(idx + 1);
+        });
+      });
+
+      // Keyboard navigation
+      container.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+          to(Math.round(target) + 1);
+          e.preventDefault();
+        } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+          to(Math.round(target) - 1);
+          e.preventDefault();
+        }
+      });
+    })();
+
+
+    const schedule = [
+      { t: "8:30 AM – 9:15 AM", title: "Registration", d: "Delegate check-in, badge collection & morning welcome" },
+      { t: "9:15 AM – 9:45 AM", title: "School Principal Interaction — Dr. Manasa R", d: "Interactive morning session with school principals and academic leaders" },
+      { t: "9:45 AM – 10:15 AM", title: "School Principal Interaction — Dr. Purnajit", d: "Academic leadership exchange and institutional perspective session" },
+      { t: "10:30 AM – 10:35 AM", title: "Welcome Speech — Ms. Pallavi Jain", d: "Official opening remarks & introduction to TEDxISME Bangalore" },
+      { t: "10:40 AM – 10:45 AM", title: "TEDx Mandatory Video", d: "Official TEDx global introductory screening" },
+      { t: "10:45 AM – 11:05 AM", title: "Samaira Garg", d: "Speaker Session · Founder, Made Again & Student Researcher" },
+      { t: "11:30 AM – 11:50 AM", title: "Dr. Nitin Garg", d: "Speaker Session · Founding Director, ISME Bangalore" },
+      { t: "11:55 AM – 12:05 PM", title: "Skit 1", d: "Creative theatrical performance on breaking invisible barriers" },
+      { t: "12:10 PM – 12:30 PM", title: "Padma Parthasarathy", d: "Speaker Session · Independent Director & Corporate Leader" },
+      { t: "12:35 PM – 12:55 PM", title: "Dr. Apurva Mittal", d: "Speaker Session · Consultant Psychiatrist & NIMHANS Fellow" },
+      { t: "12:55 PM – 1:05 PM", title: "Skit 2", d: "Theatrical presentation and artistic interlude" },
+      { t: "1:10 PM – 1:30 PM", title: "Dr. Sibichen K Mathew", d: "Speaker Session · Former Director General, IRS & Author" },
+      { t: "1:30 PM – 1:35 PM", title: "BTS (Behind the Scenes)", d: "Special video screening celebrating the organizing team & volunteers" },
+      { t: "1:35 PM – 1:40 PM", title: "Vote of Thanks — Dr. Manasa R", d: "Concluding expressions of gratitude to speakers, dignitaries & delegates" },
+      { t: "1:40 PM – 1:46 PM", title: "National Anthem AV", d: "Audiovisual presentation and solemn observance of the National Anthem" },
+      { t: "1:45 PM – 2:30 PM", title: "Lunch", d: "Curated networking lunch & refreshments for attendees and guests" }
+    ];
+    document.getElementById('scheduleList').innerHTML = schedule.map(s => `
+  <div class="sched-row">
+    <div class="sched-time">${s.t}</div>
+    <div>
+      <div class="sched-title">${s.title}</div>
+      <div class="sched-desc">${s.d}</div>
+    </div>
+  </div>`).join('');
+
+    const facultyTeachers = [
+      {
+        name: "Dr. Nitin Garg",
+        role: "Founder - Director",
+        img: "photos teachers/Dr. Nitin-Garg: Founder- Director.png"
+      },
+      {
+        name: "Pallavi Jain",
+        role: "Organiser",
+        img: "photos teachers/Pallavi-Jain:Organiser.png"
+      },
+
+      {
+        name: "Dr. Rony G Kurien",
+        role: "Dean - ISME",
+        img: "photos teachers/Dr. Rony_g_Kurien:Dean-ISME.png"
+      },
+      {
+        name: "Dr. Purnajit Chatterjee",
+        role: "Head - External",
+        img: "photos teachers/Dr.-PURNAJIT-CHATTERJEE: Head-External.png"
+      },
+
+      {
+        name: "Dr. Manasa R",
+        role: "Co-Organiser",
+        img: "photos teachers/Dr. Manasa-R: Co-Organiser.png"
+      },
+
+      {
+        name: "Dr. Prakasha T M",
+        role: "Admin Support",
+        img: "photos teachers/Dr. Prakasha T M.png"
+      },
+
+      {
+        name: "Manoj Kumar",
+        role: "IT Support",
+        img: "photos teachers/Manoj Kumar.png"
+      },
+
+    ];
+
+    const teachersAccordion = document.getElementById('teachersAccordion');
+    if (teachersAccordion) {
+      teachersAccordion.innerHTML = facultyTeachers.map((t, idx) => `
+    <article class="teacher-accordion-card${idx === 0 ? ' active' : ''}" data-index="${idx}" tabindex="0" aria-label="${t.name}, ${t.role}">
+      <img class="teacher-accordion-img" src="${encodeURI(t.img)}" alt="${t.name} - ${t.role}" loading="lazy" />
+      <div class="teacher-accordion-overlay"></div>
+      <div class="teacher-badge">
+        <div class="teacher-name">${t.name}</div>
+        <div class="teacher-designation">${t.role}</div>
+      </div>
+    </article>`).join('');
+
+      const cards = teachersAccordion.querySelectorAll('.teacher-accordion-card');
+      cards.forEach(card => {
+        const activate = () => {
+          cards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+        };
+        card.addEventListener('mouseenter', activate);
+        card.addEventListener('click', activate);
+        card.addEventListener('focus', activate);
+      });
+    }
+
+    /* ---------------- OUR PEOPLE: INTERACTIVE CORE TEAM REVEAL ---------------- */
+    const coreMembers = [
+      { name: "Pranathi Reddy", img: "photos students/Pranathi B. Reddy.png", role: "Core Team" },
+      { name: "Harsh Binaikia", img: "photos students/Harsh.jpeg", role: "Core Team" },
+      { name: "Saumya Dutta", img: "photos students/Soumya Dutta.png", role: "Core Team" },
+      { name: "Saif Ahmad", img: "photos students/Saif Ahmed.png", role: "Core Team" },
+      { name: "Parul Dhiman", img: "photos students/Parul.png", role: "Core Team" },
+      { name: "Chaitanya Ram Nirujogi", img: "photos students/Chaitanya.png", role: "Core Team" },
+      { name: "Aman Kumar Seth", img: "photos students/Aman Seth.png", role: "Core Team" },
+      { name: "Akankshya Das", img: "photos students/Akankshya Das.jpeg", role: "Core Team" },
+      { name: "Koushik Sarmah", img: "photos students/Koushik Sarmah.png", role: "Core Team" },
+      { name: "Aman Kumar", img: "photos students/Aman Kumar.png", role: "Core Team" },
+    ];
+
+    (function initCoreBoxes() {
+      const container = document.getElementById('coreBoxesGrid');
+      if (!container) return;
+
+      container.innerHTML = coreMembers.map((m) => `
+    <div class="core-box" aria-label="${m.name}, ${m.role}">
+      <!-- Corner Frame Brackets -->
+      <div class="frame-corner frame-corner-tl"></div>
+      <div class="frame-corner frame-corner-tr"></div>
+      <div class="frame-corner frame-corner-bl"></div>
+      <div class="frame-corner frame-corner-br"></div>
+
+      <!-- Static Photo -->
+      <div class="core-box-photo-wrap">
+        <img class="core-box-img" src="${encodeURI(m.img)}" alt="${m.name}" loading="lazy" />
+        <div class="core-box-overlay"></div>
+      </div>
+
+      <!-- Static Name & Role Badge -->
+      <div class="core-box-revealed-badge">
+        <div class="core-badge-name">${m.name}</div>
+        <div class="core-badge-sub">${m.role}</div>
+      </div>
+    </div>
+  `).join('');
+    })();
+
+    /* ---------------- SPONSORS & PARTNERS (INFINITE AUTO-SLIDER) ---------------- */
+    const sponsorComingSoonSlides = [
+      {
+        tier: "TITLE SPONSOR",
+        title: "WILL COME SOON",
+        sub: "TEDxISME Bangalore · 2026",
+        accent: "#EB0028"
+      },
+      {
+        tier: "INNOVATION PARTNER",
+        title: "WILL COME SOON",
+        sub: "TEDxISME Bangalore · 2026",
+        accent: "#C9A227"
+      },
+      {
+        tier: "COMMUNITY PARTNER",
+        title: "WILL COME SOON",
+        sub: "TEDxISME Bangalore · 2026",
+        accent: "#EB0028"
+      },
+      {
+        tier: "MEDIA PARTNER",
+        title: "WILL COME SOON",
+        sub: "TEDxISME Bangalore · 2026",
+        accent: "#C9A227"
+      },
+      {
+        tier: "EXPERIENCE PARTNER",
+        title: "WILL COME SOON",
+        sub: "TEDxISME Bangalore · 2026",
+        accent: "#EB0028"
+      }
+    ];
+
+    function createSponsorSvg(slide, idx) {
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'>
+    <defs>
+      <linearGradient id='bg_${idx}' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='#17171D'/>
+        <stop offset='100%' stop-color='#0B0B0E'/>
+      </linearGradient>
+      <linearGradient id='grad_${idx}' x1='0%' y1='0%' x2='100%' y2='0%'>
+        <stop offset='0%' stop-color='${slide.accent}' stop-opacity='0.6'/>
+        <stop offset='100%' stop-color='#ffffff' stop-opacity='0.15'/>
+      </linearGradient>
+    </defs>
+    <rect width='640' height='400' rx='22' fill='url(#bg_${idx})'/>
+    <rect x='1.5' y='1.5' width='637' height='397' rx='20.5' fill='none' stroke='url(#grad_${idx})' stroke-width='2'/>
+    
+    <!-- Accent icon glow -->
+    <circle cx='320' cy='135' r='46' fill='${slide.accent}' fill-opacity='0.12'/>
+    <circle cx='320' cy='135' r='30' fill='none' stroke='${slide.accent}' stroke-width='2.5' stroke-dasharray='4 4'/>
+    <path d='M320 120v30M305 135h30' stroke='${slide.accent}' stroke-width='3.5' stroke-linecap='round'/>
+    
+    <!-- Tier Category -->
+    <text x='320' y='225' font-family='system-ui, -apple-system, sans-serif' font-size='20' font-weight='800' fill='#ffffff' text-anchor='middle' letter-spacing='2.5'>${slide.tier}</text>
+    
+    <!-- WILL COME SOON announcement badge -->
+    <rect x='195' y='255' width='250' height='42' rx='10' fill='${slide.accent}' fill-opacity='0.15' stroke='${slide.accent}' stroke-width='1.5'/>
+    <text x='320' y='282' font-family='monospace' font-size='15' font-weight='700' fill='${slide.accent}' text-anchor='middle' letter-spacing='3'>${slide.title}</text>
+    
+    <!-- Subtitle -->
+    <text x='320' y='345' font-family='monospace' font-size='12' font-weight='500' fill='#7A7A8C' text-anchor='middle' letter-spacing='1.5'>${slide.sub}</text>
+  </svg>`;
+      return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+    }
+
+    (function initSponsorSlider() {
+      const track = document.getElementById('sponsorSliderTrack');
+      if (!track) return;
+
+      // 5 slides
+      const slides = sponsorComingSoonSlides.map((s, i) => createSponsorSvg(s, i));
+      // Duplicate for seamless infinite loop (10 items total)
+      const duplicatedSlides = [...slides, ...slides];
+
+      track.innerHTML = duplicatedSlides.map((src, i) => `
+    <div class="sponsor-slide-item" tabindex="0" aria-label="Sponsor slide ${(i % slides.length) + 1}">
+      <img class="sponsor-slide-img" src="${src}" alt="Sponsor announcement - Will come soon" loading="lazy" />
+    </div>
+  `).join('');
+    })();
+
+    const TIERS = [
+      {
+        id: "student",
+        name: "Student",
+        passTitle: "Student Pass",
+        price: 250,
+        currency: "₹",
+        desc: "Exclusive subsidized access for active students seeking inspiration, learning, and global exposure.",
+        ruleNote: "Valid student ID required at entry · Online Certificate only",
+        feats: [
+          "Online Certificate (No physical certificate)",
+          "Lunch included",
+          "Exposure to global level TEDx event",
+          "Standard auditorium seating",
+          "Access to all 5 speaker sessions"
+        ],
+        recommended: false,
+        btnText: "Buy Now"
+      },
+      {
+        id: "guest",
+        name: "Guests",
+        passTitle: "Guest Pass",
+        price: 500,
+        currency: "₹",
+        desc: "Full all-inclusive delegate admission with physical credentials, official goodies, and corporate networking.",
+        ruleNote: "Open to general public & corporate delegates",
+        badge: "🔥 Recommend",
+        feats: [
+          "Certificates (Physical & Online)",
+          "Exclusive TEDx Goodies & attendee kit",
+          "Official ID cards & delegate lanyards",
+          "Buffet Lunch included",
+          "Direct corporate & speaker exposure",
+          "Priority seating in main auditorium"
+        ],
+        recommended: true,
+        btnText: "Buy Now"
+      }
+    ];
+
+    const checkSvg = '<span class="pricing-check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>';
+
+    const PAYMENT_LINKS = {
+      guest: "https://u.payu.in/PAYUMN/2r47uSIfO40t",
+      student: "https://u.payu.in/PAYUMN/srjhBxKe97uy"
+    };
+
+    let selectedCombinedTier = 'guest';
+
+    function setCombinedTier(tierId) {
+      selectedCombinedTier = tierId;
+      const sCol = document.getElementById('tierCol-student');
+      const gCol = document.getElementById('tierCol-guest');
+      if (sCol) sCol.classList.toggle('selected', tierId === 'student');
+      if (gCol) gCol.classList.toggle('selected', tierId === 'guest');
+      const buyBtn = document.getElementById('combinedBuyBtn');
+      if (buyBtn) {
+        buyBtn.href = PAYMENT_LINKS[tierId] || PAYMENT_LINKS.guest;
+      }
+    }
+
+    const ticketGridEl = document.getElementById('ticketGrid');
+    if (ticketGridEl) {
+      ticketGridEl.innerHTML = `
+  <div class="pricing-card-wrap featured combined-card-wrap">
+    <div class="pricing-card combined-pricing-card">
+      <div class="combined-tiers-grid">
+        ${TIERS.map(t => `
+          <div class="combined-tier-col ${t.recommended ? 'featured ' : ''}${t.id === selectedCombinedTier ? 'selected' : ''}"
+               id="tierCol-${t.id}"
+               onclick="setCombinedTier('${t.id}')">
+            ${t.badge ? `<div class="pricing-badge">${t.badge}</div>` : ''}
+            <div class="combined-tier-radio">
+              <span class="tier-radio-circle"></span>
+              <span class="combined-tier-tag">${t.name} Pass</span>
+            </div>
+            <div class="pricing-header">
+              <h3 class="pricing-tier-name">${t.name}</h3>
+              <p class="pricing-tier-desc">${t.desc}</p>
+            </div>
+            <div class="pricing-price-box">
+              <span class="pricing-currency">${t.currency}</span>
+              <span class="pricing-amount">${t.price.toLocaleString('en-IN')}</span>
+              <span class="pricing-period">/ pass</span>
+            </div>
+            <div class="pricing-rule-note ${t.id === 'guest' ? 'guest-note' : ''}">
+              ${t.ruleNote}
+            </div>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              ${t.feats.map(f => `
+                <li class="pricing-feature-item">
+                  ${checkSvg}
+                  <span>${f.includes('No physical certificate') ? '<strong>Online Certificate</strong> (No physical certificate)' : (f.includes('Physical & Online') ? '<strong>Certificates</strong> (Physical & Online)' : f)}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+      <div class="combined-action-footer">
+        <a href="${PAYMENT_LINKS[selectedCombinedTier]}" target="_blank" rel="noopener noreferrer" class="pricing-btn combined-buy-btn" id="combinedBuyBtn" onclick="this.href=PAYMENT_LINKS[selectedCombinedTier]||PAYMENT_LINKS.guest;">
+          Buy Now →
+        </a>
+        <p class="combined-action-note">
+          Official PayU checkout · Instant seat reservation
+        </p>
+      </div>
+    </div>
+  </div>
+`;
+    }
+
+    const faqs = [
+      { q: "Can I get a refund?", a: "Tickets are transferable up to 48 hours before the event. Refunds are handled case-by-case — write to manasar@gmail.com." },
+      { q: "Is there parking on campus?", a: "Yes, limited visitor parking is available on a first-come basis; carpooling is encouraged." },
+    ];
+    document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">${f.q}</div>
+    <div class="faq-a">${f.a}</div>
+  </div>`).join('');
+
+    /* ---------------- TICKET REGISTRATION REDIRECT (PAYU PAYMENT) ---------------- */
+    let cart = { tierId: "guest", qty: 1, name: "", email: "", phone: "" };
+    let step = 1;
+
+    function openCheckout(tierId) {
+      const targetTier = tierId || selectedCombinedTier || 'guest';
+      const link = PAYMENT_LINKS[targetTier] || PAYMENT_LINKS.guest;
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+
+    function closeCheckout() {
+      const overlay = document.getElementById('overlay');
+      if (overlay) overlay.classList.remove('show');
+    }
+
+    function fmt(n) {
+      return '₹' + n.toLocaleString('en-IN');
+    }
+
+    function currentTier() {
+      return TIERS.find(t => t.id === cart.tierId) || TIERS[1];
+    }
+
+    function updateDots() {
+      for (let i = 1; i <= 2; i++) {
+        const dot = document.getElementById('dot' + i);
+        if (dot) dot.classList.toggle('active', i <= step);
+      }
+    }
+
+    function selectTier(id) {
+      cart.tierId = id;
+      renderStep();
+    }
+
+    function goStep(n) {
+      step = n;
+      renderStep();
+    }
+
+    function renderStep() {
+      updateDots();
+      const titleEl = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
+      if (!body) return;
+      const t = currentTier();
+
+      if (step === 1) {
+        if (titleEl) titleEl.textContent = "Step 1: Choose Pass";
+        body.innerHTML = `
+      <p style="font-size:13px;color:var(--grey);margin-bottom:16px;">
+        Select your attendance category below. Note: Ticket quantity is fixed to 1 pass per attendee.
+      </p>
+
+      <div class="tier-select">
+        ${TIERS.map(x => `
+          <div class="tier-opt ${x.id === cart.tierId ? 'selected' : ''}" onclick="selectTier('${x.id}')">
+            <div>
+              <div class="tier-opt-name">${x.passTitle} ${x.recommended ? '<span style="color:var(--red);font-size:11px;font-family:var(--mono);margin-left:6px;">(RECOMMENDED)</span>' : ''}</div>
+              <div style="font-size:12px;color:var(--grey);margin-top:2px;">${x.ruleNote}</div>
+            </div>
+            <div class="tier-opt-price">${fmt(x.price)}</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="background:var(--warm);border:1px dashed var(--grey-light);padding:12px 14px;border-radius:8px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--grey);">Quantity</span>
+        <span style="font-family:var(--mono);font-weight:700;font-size:13px;color:var(--ink);">1 Pass (Fixed per attendee)</span>
+      </div>
+
+      <div class="summary-line">
+        <span>${t.passTitle} × 1</span>
+        <span>${fmt(t.price)}</span>
+      </div>
+      <div class="summary-line total">
+        <span>Total Payable</span>
+        <span style="color:var(--red);font-weight:800;">${fmt(t.price)}</span>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;" onclick="goStep(2)">
+        Continue to Attendee Details →
+      </button>
+    `;
+      } else if (step === 2) {
+        if (titleEl) titleEl.textContent = "Step 2: Attendee Details";
+        body.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;background:var(--warm);padding:10px 14px;border-radius:8px;margin-bottom:18px;">
+        <div>
+          <span style="font-size:11.5px;color:var(--grey);font-family:var(--mono);text-transform:uppercase;">Selected Pass:</span>
+          <div style="font-weight:700;font-size:14px;color:var(--ink);">${t.passTitle} (${fmt(t.price)})</div>
+        </div>
+        <button onclick="goStep(1)" style="background:none;border:none;color:var(--red);font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:underline;font-weight:600;">
+          Change
+        </button>
+      </div>
+
+      <div class="field">
+        <label>Full Name (in English, as on your ID) *</label>
+        <input id="fName" value="${escAttr(cart.name)}" placeholder="e.g. Rahul Sharma" autocomplete="name" maxlength="100" />
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>Email Address *</label>
+          <input id="fEmail" type="email" value="${escAttr(cart.email)}" placeholder="you@email.com" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label>Phone Number *</label>
+          <input id="fPhone" type="tel" value="${escAttr(cart.phone)}" placeholder="9876543210" autocomplete="tel" />
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--grey);margin-top:2px;margin-bottom:14px;">
+        Official tickets and event instructions will be delivered directly to this email and phone.
+      </p>
+
+      <div class="err" id="attErr">Please enter a valid full name, email, and 10-digit mobile number.</div>
+
+      <div style="display:flex;gap:10px;margin-top:16px;">
+        <button class="btn btn-ghost" style="flex:1;justify-content:center;" onclick="goStep(1)">
+          ← Back
+        </button>
+        <button id="paySubmitBtn" class="btn btn-primary" style="flex:2;justify-content:center;" onclick="submitAttendee()">
+          Proceed to Payment (${fmt(t.price)}) →
+        </button>
+      </div>
+    `;
+      }
+    }
+
+    /* Makes typed text safe to put back inside an input's value="..." */
+    function escAttr(text) {
+      return String(text ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    /* Shows an error under the form and highlights the field it is about */
+    function showAttendeeError(message, field) {
+      const errEl = document.getElementById('attErr');
+      if (errEl) {
+        errEl.textContent = message;
+        errEl.classList.add('show');
+      }
+      ['fName', 'fEmail', 'fPhone'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.borderColor = '';
+      });
+      const inputId = { name: 'fName', email: 'fEmail', phone: 'fPhone' }[field];
+      const input = inputId && document.getElementById(inputId);
+      if (input) {
+        input.style.borderColor = 'var(--red)';
+        input.focus();
+      } else if (field === 'tierId') {
+        goStep(1);
+      }
+    }
+
+    /* ---------------- AFTER RAZORPAY PAYMENT ----------------
+       Razorpay sends the visitor back to this page with
+       ?razorpay_payment_link_status=paid&razorpay_payment_link_reference_id=<ticket id>...
+       Show a confirmation and clean the address bar. */
+    (function handlePaymentReturn() {
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get('razorpay_payment_link_status');
+      if (!status) return;
+
+      const ref = params.get('razorpay_payment_link_reference_id') || '';
+      const code = /^[0-9a-f-]{36}$/i.test(ref) ? '#' + ref.replace(/-/g, '').slice(0, 8).toUpperCase() : '';
+      const paid = status === 'paid';
+
+      // Remove the payment details from the address bar (so a refresh doesn't show this again)
+      try { history.replaceState(null, '', window.location.pathname + window.location.hash); } catch (e) { }
+
+      const show = () => {
+        const overlay = document.getElementById('overlay');
+        const body = document.getElementById('modalBody');
+        const titleEl = document.getElementById('modalTitle');
+        const steps = document.querySelector('.modal .steps');
+        if (!overlay || !body) return;
+        if (steps) steps.style.display = 'none';
+        if (titleEl) titleEl.textContent = paid ? 'Payment Successful' : 'Payment Not Completed';
+
+        body.innerHTML = paid ? `
+      <div class="confirm-wrap">
+        <div class="confirm-x">&#10003;</div>
+        <h3 style="font-family:var(--display);font-size:22px;margin-bottom:10px;">You're in!</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.6;">
+          Your payment was received. Your ticket with the entry QR code is being emailed to you now.
+          It usually arrives within a few minutes &mdash; please check your Spam / Promotions folder too.
+        </p>
+        ${code ? `<div class="ticket-id">Ticket reference: ${code}</div>` : ''}
+        <p style="font-size:12.5px;color:var(--grey);line-height:1.6;">
+          No email after 30 minutes? Write to us with your ticket reference.
+        </p>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" onclick="closeCheckout()">Done</button>
+      </div>` : `
+      <div class="confirm-wrap">
+        <div class="confirm-x">!</div>
+        <h3 style="font-family:var(--display);font-size:22px;margin-bottom:10px;">Payment not completed</h3>
+        <p style="font-size:14px;color:var(--grey);line-height:1.6;">
+          Your payment did not go through, so no ticket was booked. If money was deducted,
+          it is normally refunded automatically by your bank.
+        </p>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px;" onclick="restartCheckout()">Try again</button>
+      </div>`;
+        overlay.classList.add('show');
+      };
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show);
+      else show();
+    })();
+
+    /* Re-opens the normal 2-step checkout (shows the step dots again) */
+    function restartCheckout() {
+      const steps = document.querySelector('.modal .steps');
+      if (steps) steps.style.display = '';
+      openCheckout(cart.tierId);
+    }
+
+    async function submitAttendee() {
+      const nameEl = document.getElementById('fName');
+      const emailEl = document.getElementById('fEmail');
+      const phoneEl = document.getElementById('fPhone');
+      const errEl = document.getElementById('attErr');
+      const payBtn = document.getElementById('paySubmitBtn');
+
+      const name = nameEl ? nameEl.value.trim() : '';
+      const email = emailEl ? emailEl.value.trim() : '';
+      const phone = phoneEl ? phoneEl.value.trim() : '';
+
+      // Same rules as the server (api/checkout.js)
+      const phoneDigits = phone.replace(/\D/g, '');
+      let problem = null;
+      if (name.length < 2) problem = { field: 'name', msg: 'Please enter your full name.' };
+      else if (!/[A-Za-z].*[A-Za-z]/.test(name)) problem = { field: 'name', msg: 'Please enter your name in English letters (it is printed on your ticket).' };
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) problem = { field: 'email', msg: 'Please enter a valid email address. Your ticket will be sent here.' };
+      else if (!/^[0-9\s()+-]{7,20}$/.test(phone) || phoneDigits.length < 10 || phoneDigits.length > 13) problem = { field: 'phone', msg: 'Please enter a valid 10-digit mobile number.' };
+
+      if (problem) {
+        showAttendeeError(problem.msg, problem.field);
+        return;
+      }
+
+      if (errEl) errEl.classList.remove('show');
+      ['fName', 'fEmail', 'fPhone'].forEach(id => { const el = document.getElementById(id); if (el) el.style.borderColor = ''; });
+      cart.name = name;
+      cart.email = email;
+      cart.phone = phone;
+
+      if (payBtn) {
+        payBtn.disabled = true;
+        payBtn.textContent = 'Connecting to Payment...';
+        payBtn.style.opacity = '0.7';
+        payBtn.style.cursor = 'wait';
+      }
+
+      try {
+        const response = await fetch(
+          BACKEND_CONFIG.apiBaseUrl.replace(/\/$/, '') + BACKEND_CONFIG.checkoutEndpoint,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              tierId: cart.tierId,
+              quantity: 1,
+              attendee: { name: cart.name, email: cart.email, phone: cart.phone }
+            })
+          }
+        );
+
+        let result = {};
+        try { result = await response.json(); } catch (e) { /* non-JSON reply */ }
+        if (!response.ok || !result.paymentUrl) {
+          const err = new Error(result.error || 'Unable to start payment. Please try again.');
+          err.field = result.field;
+          throw err;
+        }
+
+        // Redirect attendee to Razorpay payment link
+        window.location.assign(result.paymentUrl);
+      } catch (error) {
+        console.error('Checkout error:', error);
+        const offline = error instanceof TypeError; // fetch failed: no internet / server unreachable
+        showAttendeeError(
+          offline ? 'Could not reach the payment server. Check your internet and try again.' : error.message,
+          error.field
+        );
+        if (payBtn) {
+          payBtn.disabled = false;
+          payBtn.textContent = `Proceed to Payment (${fmt(currentTier().price)}) →`;
+          payBtn.style.opacity = '1';
+          payBtn.style.cursor = 'pointer';
+        }
+      }
+    }
+
+    /* ---------------- SCROLL REVEAL ANIMATIONS ---------------- */
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObserver.observe(el));
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('visible'));
+    }
+
+    /* ---------------- VERTICAL DOCK INTERACTION ---------------- */
+    (function initDock() {
+      const dockPanel = document.querySelector('.dock-panel');
+      if (!dockPanel) return;
+      const dockItems = dockPanel.querySelectorAll('.dock-item');
+      const getDefaults = () => {
+        const isMobile = window.innerWidth <= 640;
+        return {
+          defaultSize: isMobile ? 38 : 44,
+          magnification: isMobile ? 56 : 68,
+          distance: isMobile ? 80 : 110
+        };
+      };
+
+      dockPanel.addEventListener('mousemove', (e) => {
+        const { defaultSize, magnification, distance } = getDefaults();
+        const mouseY = e.clientY;
+
+        dockItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          const itemCenterY = rect.top + rect.height / 2;
+          const dist = Math.abs(mouseY - itemCenterY);
+
+          if (dist < distance) {
+            const factor = Math.cos((dist / distance) * (Math.PI / 2));
+            const newSize = defaultSize + (magnification - defaultSize) * factor;
+            item.style.width = `${newSize}px`;
+            item.style.height = `${newSize}px`;
+          } else {
+            item.style.width = `${defaultSize}px`;
+            item.style.height = `${defaultSize}px`;
+          }
+        });
+      });
+
+      dockPanel.addEventListener('mouseleave', () => {
+        dockItems.forEach((item) => {
+          item.style.width = '';
+          item.style.height = '';
+        });
+      });
+    })();
+
+    /* ---------------- INTERACTIVE LOCATION MAP WIDGET ---------------- */
+    (function initLocationMap() {
+      const mapWrap = document.querySelector('.location-map-wrap');
+      const card = document.querySelector('.location-map-card');
+      if (!mapWrap || !card) return;
+
+      mapWrap.addEventListener('mousemove', (e) => {
+        const rect = mapWrap.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const x = e.clientX - centerX;
+        const y = e.clientY - centerY;
+        const rotX = (-y / 35).toFixed(2);
+        const rotY = (x / 35).toFixed(2);
+        card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      });
+
+      mapWrap.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+
+      mapWrap.addEventListener('click', (e) => {
+        if (e.target.closest('.location-map-link')) return; // Allow clicking link
+        mapWrap.classList.toggle('expanded');
+        const hint = mapWrap.querySelector('.location-map-hint');
+        if (hint) {
+          hint.textContent = mapWrap.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand map';
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
