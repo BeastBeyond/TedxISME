@@ -97,6 +97,7 @@
     }
 
     /* ---------- NAV ---------- */
+
     header.nav {
       position: sticky;
       top: 0;
@@ -113,118 +114,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .lockup {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      font-family: var(--display);
-      font-size: 19px;
-      letter-spacing: 0.02em;
-    }
-
-    .lockup .x {
-      color: var(--red);
-      font-size: 22px;
-    }
-
-    .lockup .isme {
-      color: var(--grey);
-      font-size: 13px;
-      font-family: var(--mono);
-      letter-spacing: 0.08em;
-      align-self: center;
-    }
-
-    .tedx-lockup {
-      display: inline-flex;
-      align-items: baseline;
-      white-space: nowrap;
-      font-family: var(--display);
-    }
-
-    .tedx-lockup .ted {
-      position: relative;
-      display: inline-block;
-      color: var(--red);
-      padding-right: 0.03em;
-    }
-
-    .tedx-lockup .xsup {
-      position: absolute;
-      top: -0.28em;
-      right: -0.06em;
-      font-size: 0.34em;
-      color: var(--ink);
-      font-family: var(--body);
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .tedx-lockup .isme-txt {
-      margin-left: 0.06em;
-      font-family: var(--body);
-      font-weight: 200;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      font-size: 0.86em;
-    }
-
-    footer .tedx-lockup .isme-txt {
-      color: #fff;
-    }
-
-    footer .tedx-lockup .xsup {
-      color: #fff;
-    }
-
-    .hero .tedx-lockup {
-      font-size: clamp(40px, 8.5vw, 100px);
-    }
-
-    .hero .tedx-lockup .isme-txt {
-      color: #fff;
-    }
-
-    .hero .tedx-lockup .xsup {
-      color: #fff;
-    }
-
-    .x-caption {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .x-caption b {
-      font-family: var(--display);
-      color: var(--red);
-      font-size: 15px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links a {
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      color: #C9C6C0;
-      transition: border-color .2s, color .2s;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-      border-color: var(--red);
     }
 
     .btn {
@@ -263,11 +152,8 @@
       color: var(--red);
     }
 
-    .nav-cta {
-      display: inline-flex;
-    }
-
     /* ---------- HERO ---------- */
+
     .hero {
       position: relative;
       overflow: hidden;
@@ -305,10 +191,6 @@
     .hero h1 {
       font-size: clamp(48px, 9vw, 108px);
       color: #fff;
-    }
-
-    .hero h1 .x-glyph {
-      color: var(--red);
     }
 
     .hero .theme {
@@ -369,6 +251,7 @@
     }
 
     /* ---------- SECTION SHELL ---------- */
+
     section {
       padding: 88px 0;
     }
@@ -393,6 +276,7 @@
     }
 
     /* ---------- ABOUT ---------- */
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -445,6 +329,7 @@
     }
 
     /* ---------- 3D WORKS-WHEEL SPEAKERS SECTION ---------- */
+
     .speakers-wheel-wrap {
       position: relative;
       width: 100%;
@@ -560,6 +445,7 @@
     }
 
     /* Card Placeholder for speakers with photo pending */
+
     .wheel-card-placeholder {
       width: 100%;
       height: 100%;
@@ -616,6 +502,7 @@
     }
 
     /* Middle Left: Speaker Description Panel */
+
     .wheel-bio-panel {
       position: absolute;
       left: 5%;
@@ -728,6 +615,7 @@
     }
 
     /* Top Right: Speaker Names Lineup List */
+
     .wheel-lineup-panel {
       position: absolute;
       top: 6%;
@@ -829,17 +717,57 @@
       }
     }
 
-    @media(max-width: 640px) {
+    .hint-mobile {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
       .speakers-wheel-wrap {
-        height: 720px;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
       }
 
-      .wheel-lineup-panel {
+      /* Photo sits in its own area above the bio, so nothing covers it */
+      .wheel-stage {
+        position: relative;
+        inset: auto;
+        flex: none;
+        height: 320px;
+        overflow: hidden;
+        cursor: default;
+        touch-action: pan-y;
+      }
+
+      .wheel-bio-panel {
+        position: relative;
+        inset: auto;
+        transform: none;
+        width: auto;
+        max-width: none;
+        margin: 0 14px 14px;
+        padding: 18px;
+      }
+
+      .wheel-bio-desc {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+      }
+
+      .wheel-lineup-panel,
+      .hint-desktop {
         display: none;
+      }
+
+      .hint-mobile {
+        display: inline;
       }
     }
 
     /* ---------- SCHEDULE ---------- */
+
     .schedule {
       max-width: 820px;
     }
@@ -886,6 +814,7 @@
     }
 
     /* ---------- ORGANISERS (FACULTY IMAGE ACCORDION) ---------- */
+
     .teachers-accordion {
       display: flex;
       gap: 12px;
@@ -933,6 +862,7 @@
     }
 
     /* Downward left corner badge in blurish format */
+
     .teacher-badge {
       position: absolute;
       bottom: 18px;
@@ -1002,7 +932,7 @@
       }
 
       .teachers-accordion .teacher-accordion-card:hover .teacher-badge,
-      .teacher-accordion-card.active .teacher-badge {
+    .teacher-accordion-card.active .teacher-badge {
         opacity: 1;
         transform: translateY(0);
         filter: none;
@@ -1038,6 +968,7 @@
     }
 
     /* ---------- OUR PEOPLE: DYNAMIC BOXES (NAMES IN BOXES, HOVER REVEALS PICTURE) ---------- */
+
     .team-section {
       background: var(--ink);
       color: #fff;
@@ -1131,8 +1062,8 @@
 
     @media (max-width: 640px) {
       .core-boxes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
       }
     }
 
@@ -1146,7 +1077,6 @@
     .core-box {
       position: relative;
       aspect-ratio: 3 / 4;
-      min-height: 280px;
       border-radius: 16px;
       overflow: hidden;
       background: #111;
@@ -1156,6 +1086,7 @@
     }
 
     /* Corner frame brackets */
+
     .frame-corner {
       position: absolute;
       width: 18px;
@@ -1198,6 +1129,7 @@
     }
 
     /* Static Photo inside box */
+
     .core-box-photo-wrap {
       position: absolute;
       inset: 0;
@@ -1222,6 +1154,7 @@
     }
 
     /* Static Name & Role Badge */
+
     .core-box-revealed-badge {
       position: absolute;
       bottom: 14px;
@@ -1257,14 +1190,43 @@
       margin-top: 2px;
     }
 
-    /* ---------- SPONSORS (INFINITE AUTO-SLIDER) ---------- */
-    @keyframes scroll-sponsor {
-      0% {
-        transform: translateX(0);
+    /* Mobile: slimmer cards so the 2-column grid never overflows */
+    @media (max-width: 640px) {
+      .core-box {
+        border-radius: 14px;
       }
 
+      .frame-corner {
+        width: 12px;
+        height: 12px;
+      }
+
+      .core-box-revealed-badge {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        padding: 6px 8px;
+        border-radius: 9px;
+      }
+
+      .core-badge-name {
+        font-size: 12px;
+      }
+
+      .core-badge-sub {
+        font-size: 8.5px;
+        letter-spacing: 0.06em;
+      }
+    }
+
+    /* ---------- SPONSORS (INFINITE AUTO-SLIDER) ---------- */
+
+    @keyframes scroll-sponsor {
+      0% {
+      transform: translateX(0);
+      }
       100% {
-        transform: translateX(-50%);
+      transform: translateX(-50%);
       }
     }
 
@@ -1323,6 +1285,7 @@
     }
 
     /* ---------- TICKETS (PRICING-02) ---------- */
+
     .ticket-grid {
       display: block;
       max-width: 960px;
@@ -1354,7 +1317,7 @@
 
     @keyframes spinPricingBorder {
       to {
-        --pricing-angle: 360deg;
+      --pricing-angle: 360deg;
       }
     }
 
@@ -1555,6 +1518,7 @@
     }
 
     /* Combined Pricing Card */
+
     .combined-card-wrap {
       width: 100%;
     }
@@ -1698,6 +1662,7 @@
     }
 
     /* ---------- FAQ ---------- */
+
     .faq-item {
       border-top: 1px solid var(--grey-light);
       padding: 20px 0;
@@ -1741,6 +1706,7 @@
     }
 
     /* ---------- FOOTER ---------- */
+
     footer {
       background: var(--ink);
       color: #fff;
@@ -1754,10 +1720,6 @@
       gap: 32px;
       padding-bottom: 36px;
       border-bottom: 1px solid #262626;
-    }
-
-    footer .lockup {
-      color: #fff;
     }
 
     .footer-cols {
@@ -1797,6 +1759,7 @@
     }
 
     /* ---------- LOCATION MAP COMPONENT (FOOTER / VENUE) ---------- */
+
     .location-map-wrap {
       position: relative;
       cursor: pointer;
@@ -1951,283 +1914,16 @@
       opacity: 0;
     }
 
-    /* ---------- MODAL / CHECKOUT ---------- */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 10, 10, 0.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 200;
-      padding: 20px;
-    }
-
-    .overlay.show {
-      display: flex;
-    }
-
-    .modal {
-      background: #fff;
-      width: 100%;
-      max-width: 480px;
-      max-height: 92vh;
-      overflow-y: auto;
-      position: relative;
-      border-top: 5px solid var(--red);
-    }
-
-    .modal-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 26px 0;
-    }
-
-    .modal-title {
-      font-family: var(--display);
-      font-size: 22px;
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      font-family: var(--display);
-      font-size: 22px;
-      color: var(--grey);
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .modal-close:hover {
-      color: var(--red);
-    }
-
-    .modal-body {
-      padding: 20px 26px 28px;
-    }
-
-    .steps {
-      display: flex;
-      gap: 6px;
-      padding: 0 26px;
-      margin-top: 14px;
-    }
-
-    .step-dot {
-      flex: 1;
-      height: 3px;
-      background: var(--grey-light);
-    }
-
-    .step-dot.active {
-      background: var(--red);
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    .field label {
-      display: block;
-      font-size: 12px;
-      font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--grey);
-      margin-bottom: 6px;
-    }
-
-    .field input,
-    .field select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--grey-light);
-      font-family: var(--body);
-      font-size: 14px;
-      background: var(--warm);
-    }
-
-    .field input:focus,
-    .field select:focus {
-      border-color: var(--red);
-      outline: none;
-      background: #fff;
-    }
-
-    .row2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .qty-control {
-      display: flex;
-      align-items: center;
-      border: 1px solid var(--grey-light);
-      width: fit-content;
-    }
-
-    .qty-control button {
-      width: 38px;
-      height: 38px;
-      background: var(--warm);
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      font-family: var(--display);
-    }
-
-    .qty-control span {
-      width: 44px;
-      text-align: center;
-      font-family: var(--mono);
-      font-weight: 600;
-    }
-
-    .tier-select {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .tier-opt {
-      border: 1px solid var(--grey-light);
-      padding: 14px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .tier-opt.selected {
-      border-color: var(--red);
-      background: var(--warm);
-    }
-
-    .tier-opt-name {
-      font-weight: 700;
-    }
-
-    .tier-opt-price {
-      font-family: var(--mono);
-      color: var(--red);
-      font-weight: 600;
-    }
-
-    .summary-line {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13.5px;
-      padding: 8px 0;
-      color: var(--grey);
-    }
-
-    .summary-line.total {
-      border-top: 1px solid var(--grey-light);
-      margin-top: 8px;
-      padding-top: 14px;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .pay-methods {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .pay-methods button {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid var(--grey-light);
-      background: #fff;
-      font-size: 12.5px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: var(--body);
-    }
-
-    .pay-methods button.active {
-      border-color: var(--red);
-      color: var(--red);
-      background: var(--warm);
-    }
-
-    .demo-note {
-      font-size: 11.5px;
-      color: var(--grey);
-      background: var(--warm);
-      border: 1px dashed var(--grey-light);
-      padding: 10px 12px;
-      margin-top: 6px;
-      margin-bottom: 18px;
-      font-family: var(--mono);
-    }
-
-    .confirm-wrap {
-      text-align: center;
-      padding: 10px 0 6px;
-    }
-
-    .confirm-x {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: var(--red);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--display);
-      font-size: 30px;
-      margin: 0 auto 20px;
-    }
-
-    .ticket-id {
-      font-family: var(--mono);
-      font-size: 13px;
-      background: var(--warm);
-      padding: 12px;
-      margin: 18px 0;
-      letter-spacing: 0.05em;
-    }
-
-    .err {
-      color: var(--red);
-      font-size: 12px;
-      margin-top: -10px;
-      margin-bottom: 14px;
-      display: none;
-    }
-
-    .err.show {
-      display: block;
-    }
-
     /* ---------- ANIMATIONS ---------- */
+
     @keyframes fadeUp {
       from {
-        opacity: 0;
-        transform: translateY(24px);
+      opacity: 0;
+      transform: translateY(24px);
       }
-
       to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
+      opacity: 1;
+      transform: translateY(0);
       }
     }
 
@@ -2261,6 +1957,7 @@
     }
 
     /* scroll-reveal: items start invisible and become visible via JS */
+
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -2273,98 +1970,39 @@
     }
 
     /* staggered reveal for grids */
-    .reveal-stagger .speaker-card,
-    .reveal-stagger .org-card,
-    .reveal-stagger .ticket-card,
+
     .reveal-stagger .core-box {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity .55s cubic-bezier(.22, 1, .36, 1), transform .55s cubic-bezier(.22, 1, .36, 1), border-color .25s, background .2s, box-shadow .25s;
+      transition: opacity .55s cubic-bezier(.22, 1, .36, 1), transform .55s cubic-bezier(.22, 1, .36, 1);
     }
 
-    .reveal-stagger.visible .speaker-card:nth-child(1),
-    .reveal-stagger.visible .org-card:nth-child(1),
-    .reveal-stagger.visible .ticket-card:nth-child(1),
-    .reveal-stagger.visible .core-box:nth-child(1) {
+    .reveal-stagger.visible .core-box {
       opacity: 1;
       transform: translateY(0);
-      transition-delay: .04s;
-    }
-
-    .reveal-stagger.visible .speaker-card:nth-child(2),
-    .reveal-stagger.visible .org-card:nth-child(2),
-    .reveal-stagger.visible .ticket-card:nth-child(2),
-    .reveal-stagger.visible .core-box:nth-child(2) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .08s;
-    }
-
-    .reveal-stagger.visible .speaker-card:nth-child(3),
-    .reveal-stagger.visible .org-card:nth-child(3),
-    .reveal-stagger.visible .ticket-card:nth-child(3),
-    .reveal-stagger.visible .core-box:nth-child(3) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .12s;
-    }
-
-    .reveal-stagger.visible .speaker-card:nth-child(4),
-    .reveal-stagger.visible .org-card:nth-child(4),
-    .reveal-stagger.visible .ticket-card:nth-child(4),
-    .reveal-stagger.visible .core-box:nth-child(4) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .16s;
-    }
-
-    .reveal-stagger.visible .speaker-card:nth-child(5),
-    .reveal-stagger.visible .org-card:nth-child(5),
-    .reveal-stagger.visible .core-box:nth-child(5) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .20s;
-    }
-
-    .reveal-stagger.visible .speaker-card:nth-child(6),
-    .reveal-stagger.visible .org-card:nth-child(6),
-    .reveal-stagger.visible .core-box:nth-child(6) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .24s;
-    }
-
-    .reveal-stagger.visible .core-box:nth-child(n+7) {
-      opacity: 1;
-      transform: translateY(0);
-      transition-delay: .28s;
-    }
-
-    /* Nav links hover */
-    .nav-links a {
-      transition: border-color .2s, color .2s;
+      transition-delay: calc(min(var(--i, 0), 6) * .04s);
     }
 
     /* Button active press */
+
     .btn:active {
       transform: scale(0.97) translateY(0) !important;
     }
 
     /* Hero background cross animation */
+
     @keyframes driftCross {
       0% {
-        opacity: 0.08;
-        transform: translate(0, 0) scale(1);
+      opacity: 0.08;
+      transform: translate(0, 0) scale(1);
       }
-
       50% {
-        opacity: 0.11;
-        transform: translate(-18px, 12px) scale(1.03);
+      opacity: 0.11;
+      transform: translate(-18px, 12px) scale(1.03);
       }
-
       100% {
-        opacity: 0.08;
-        transform: translate(0, 0) scale(1);
+      opacity: 0.08;
+      transform: translate(0, 0) scale(1);
       }
     }
 
@@ -2373,27 +2011,24 @@
     }
 
     /* reduced motion */
-    @media(prefers-reduced-motion:reduce) {
 
+    @media(prefers-reduced-motion:reduce) {
       *,
-      *::before,
-      *::after {
+    *::before,
+    *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
       }
 
-      .reveal,
-      .reveal-stagger .speaker-card,
-      .reveal-stagger .org-card,
-      .reveal-stagger .ticket-card,
-      .reveal-stagger .team-card {
+      .reveal {
         opacity: 1;
         transform: none;
       }
     }
 
     /* Nav and footer logo image */
+
     .nav-logo-img {
       height: clamp(44px, 5.5vw, 68px);
       max-width: 100%;
@@ -2411,6 +2046,7 @@
     }
 
     /* ---------- VERTICAL RIGHT-SIDE DOCK ---------- */
+
     .dock-container {
       position: fixed;
       right: 20px;
@@ -2622,7 +2258,7 @@
         <p class="eyebrow">Speakers</p>
         <h2>Five voices, one afternoon</h2>
         <p>Discover our five distinguished speakers breaking invisible barriers. Drag or click any speaker in the lineup
-          to turn the 3D wheel.</p>
+          to turn the wheel.</p>
       </div>
       <div class="speakers-wheel-wrap reveal" id="speakersWheelStage" tabindex="0" role="region"
         aria-label="Interactive 3D Speakers Carousel"></div>
@@ -2895,30 +2531,7 @@
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL -->
-  <div class="overlay" id="overlay">
-    <div class="modal">
-      <div class="modal-head">
-        <span class="modal-title" id="modalTitle">Get Tickets</span>
-        <button class="modal-close" onclick="closeCheckout()">×</button>
-      </div>
-      <div class="steps">
-        <div class="step-dot active" id="dot1"></div>
-        <div class="step-dot" id="dot2"></div>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
   <script>
-    /*
-      Runtime configuration is supplied during deployment. Secrets must remain in
-      the backend environment and never belong in this HTML file.
-    */
-    const BACKEND_CONFIG = Object.assign(
-      { apiBaseUrl: '', checkoutEndpoint: '/api/checkout' },
-      window.TEDX_API_CONFIG || {}
-    );
     /* ---------------- 5 FEATURED SPEAKERS & 3D WORKS-WHEEL ---------------- */
     const speakers = [
       {
@@ -2960,7 +2573,6 @@
       const count = speakers.length;
       let activeIndex = 0;
 
-      // Render DOM structure: 3D stage with drum, middle-left bio panel, top-right lineup (watermark removed)
       container.innerHTML = `
     <div class="wheel-stage" role="region" aria-label="3D Speakers Carousel">
       <div class="wheel-drum"></div>
@@ -2973,7 +2585,7 @@
       <div class="wheel-bio-role" id="wheelBioRole">${speakers[0].role}</div>
       <div class="wheel-bio-desc" id="wheelBioDesc">${speakers[0].description}</div>
       <div class="wheel-bio-foot">
-        <span>Drag to rotate</span>
+        <span class="hint-desktop">Drag to rotate</span><span class="hint-mobile">Use arrows to browse</span>
         <div class="wheel-nav-btns">
           <button type="button" class="wheel-btn" id="wheelPrevBtn" aria-label="Previous speaker">↑</button>
           <button type="button" class="wheel-btn" id="wheelNextBtn" aria-label="Next speaker">↓</button>
@@ -3050,17 +2662,36 @@
       const DRAG_UNITS = 400;
       const EASE = 0.095;
 
-      let stageW = container.clientWidth;
-      let stageH = container.clientHeight;
+      const mobileMQ = window.matchMedia("(max-width: 640px)");
       let cardW = 280;
       let cardH = 320;
       let drumR = 600;
+      let lockedW = 0;
+
+      // Mobile: reserve space for the longest bio so the arrow buttons don't jump between speakers
+      function lockBioHeight() {
+        bioDesc.style.minHeight = "";
+        if (!mobileMQ.matches) return;
+        const current = bioDesc.textContent;
+        let tallest = 0;
+        speakers.forEach(s => {
+          bioDesc.textContent = s.description;
+          tallest = Math.max(tallest, bioDesc.offsetHeight);
+        });
+        bioDesc.textContent = current;
+        bioDesc.style.minHeight = tallest + "px";
+      }
 
       function updateMetrics() {
-        stageW = container.clientWidth;
-        stageH = container.clientHeight;
-        const isMobile = stageW <= 640;
-        cardW = Math.min(stageH * CARD_H_RATIO * CARD_RATIO, stageW * (isMobile ? 0.65 : CARD_MAX_W), 360);
+        const stageW = container.clientWidth;
+        const stageH = stage.clientHeight;
+        cardW = mobileMQ.matches
+          ? Math.min(stageW * 0.62, stageH * 0.8 * CARD_RATIO, 360)
+          : Math.min(stageH * CARD_H_RATIO * CARD_RATIO, stageW * CARD_MAX_W, 360);
+        if (stageW !== lockedW) {
+          lockedW = stageW;
+          lockBioHeight();
+        }
         cardH = cardW / CARD_RATIO;
         drumR = cardH * DRUM;
         const depth = cardH * LENS;
@@ -3075,8 +2706,8 @@
       }
 
       updateMetrics();
-      const ro = new ResizeObserver(updateMetrics);
-      ro.observe(container);
+      new ResizeObserver(updateMetrics).observe(container);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockBioHeight);
 
       // Wheel animation variables
       let turn = 0;
@@ -3120,9 +2751,8 @@
       }
 
       // High-performance single rAF loop
-      let animId = null;
       function draw(now) {
-        animId = requestAnimationFrame(draw);
+        requestAnimationFrame(draw);
         const dt = Math.min(now - lastTime, 32);
         lastTime = now;
 
@@ -3165,14 +2795,12 @@
         }
       }
 
-      animId = requestAnimationFrame(draw);
+      requestAnimationFrame(draw);
 
-      // NOTE: Scroll interception (wheel listener) is removed so page scrolling is never hijacked.
-      // Navigation is powered by smooth drag gesture, keyboard arrows, and lineup clicks.
-
-      // Pointer drag interaction
+      // Pointer drag (desktop only; on mobile the page scrolls normally and the arrows navigate)
       let dragData = null;
       stage.addEventListener("pointerdown", (e) => {
+        if (mobileMQ.matches) return;
         dragData = { y: e.clientY, time: performance.now(), v: 0 };
         stage.setPointerCapture(e.pointerId);
       });
@@ -3340,8 +2968,8 @@
       const container = document.getElementById('coreBoxesGrid');
       if (!container) return;
 
-      container.innerHTML = coreMembers.map((m) => `
-    <div class="core-box" aria-label="${m.name}, ${m.role}">
+      container.innerHTML = coreMembers.map((m, i) => `
+    <div class="core-box" style="--i:${i + 1}" aria-label="${m.name}, ${m.role}">
       <!-- Corner Frame Brackets -->
       <div class="frame-corner frame-corner-tl"></div>
       <div class="frame-corner frame-corner-tr"></div>
@@ -3450,7 +3078,6 @@
       {
         id: "student",
         name: "Student",
-        passTitle: "Student Pass",
         price: 250,
         currency: "₹",
         desc: "Exclusive subsidized access for active students seeking inspiration, learning, and global exposure.",
@@ -3462,13 +3089,11 @@
           "Standard auditorium seating",
           "Access to all 5 speaker sessions"
         ],
-        recommended: false,
-        btnText: "Buy Now"
+        recommended: false
       },
       {
         id: "guest",
         name: "Guests",
-        passTitle: "Guest Pass",
         price: 500,
         currency: "₹",
         desc: "Full all-inclusive delegate admission with physical credentials, official goodies, and corporate networking.",
@@ -3482,8 +3107,7 @@
           "Direct corporate & speaker exposure",
           "Priority seating in main auditorium"
         ],
-        recommended: true,
-        btnText: "Buy Now"
+        recommended: true
       }
     ];
 
@@ -3548,7 +3172,7 @@
         `).join('')}
       </div>
       <div class="combined-action-footer">
-        <a href="${PAYMENT_LINKS[selectedCombinedTier]}" target="_blank" rel="noopener noreferrer" class="pricing-btn combined-buy-btn" id="combinedBuyBtn" onclick="this.href=PAYMENT_LINKS[selectedCombinedTier]||PAYMENT_LINKS.guest;">
+        <a href="${PAYMENT_LINKS[selectedCombinedTier]}" target="_blank" rel="noopener noreferrer" class="pricing-btn combined-buy-btn" id="combinedBuyBtn">
           Buy Now →
         </a>
         <p class="combined-action-note">
@@ -3569,302 +3193,6 @@
     <div class="faq-q">${f.q}</div>
     <div class="faq-a">${f.a}</div>
   </div>`).join('');
-
-    /* ---------------- TICKET REGISTRATION REDIRECT (PAYU PAYMENT) ---------------- */
-    let cart = { tierId: "guest", qty: 1, name: "", email: "", phone: "" };
-    let step = 1;
-
-    function openCheckout(tierId) {
-      const targetTier = tierId || selectedCombinedTier || 'guest';
-      const link = PAYMENT_LINKS[targetTier] || PAYMENT_LINKS.guest;
-      window.open(link, '_blank', 'noopener,noreferrer');
-    }
-
-    function closeCheckout() {
-      const overlay = document.getElementById('overlay');
-      if (overlay) overlay.classList.remove('show');
-    }
-
-    function fmt(n) {
-      return '₹' + n.toLocaleString('en-IN');
-    }
-
-    function currentTier() {
-      return TIERS.find(t => t.id === cart.tierId) || TIERS[1];
-    }
-
-    function updateDots() {
-      for (let i = 1; i <= 2; i++) {
-        const dot = document.getElementById('dot' + i);
-        if (dot) dot.classList.toggle('active', i <= step);
-      }
-    }
-
-    function selectTier(id) {
-      cart.tierId = id;
-      renderStep();
-    }
-
-    function goStep(n) {
-      step = n;
-      renderStep();
-    }
-
-    function renderStep() {
-      updateDots();
-      const titleEl = document.getElementById('modalTitle');
-      const body = document.getElementById('modalBody');
-      if (!body) return;
-      const t = currentTier();
-
-      if (step === 1) {
-        if (titleEl) titleEl.textContent = "Step 1: Choose Pass";
-        body.innerHTML = `
-      <p style="font-size:13px;color:var(--grey);margin-bottom:16px;">
-        Select your attendance category below. Note: Ticket quantity is fixed to 1 pass per attendee.
-      </p>
-
-      <div class="tier-select">
-        ${TIERS.map(x => `
-          <div class="tier-opt ${x.id === cart.tierId ? 'selected' : ''}" onclick="selectTier('${x.id}')">
-            <div>
-              <div class="tier-opt-name">${x.passTitle} ${x.recommended ? '<span style="color:var(--red);font-size:11px;font-family:var(--mono);margin-left:6px;">(RECOMMENDED)</span>' : ''}</div>
-              <div style="font-size:12px;color:var(--grey);margin-top:2px;">${x.ruleNote}</div>
-            </div>
-            <div class="tier-opt-price">${fmt(x.price)}</div>
-          </div>
-        `).join('')}
-      </div>
-
-      <div style="background:var(--warm);border:1px dashed var(--grey-light);padding:12px 14px;border-radius:8px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--grey);">Quantity</span>
-        <span style="font-family:var(--mono);font-weight:700;font-size:13px;color:var(--ink);">1 Pass (Fixed per attendee)</span>
-      </div>
-
-      <div class="summary-line">
-        <span>${t.passTitle} × 1</span>
-        <span>${fmt(t.price)}</span>
-      </div>
-      <div class="summary-line total">
-        <span>Total Payable</span>
-        <span style="color:var(--red);font-weight:800;">${fmt(t.price)}</span>
-      </div>
-
-      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;" onclick="goStep(2)">
-        Continue to Attendee Details →
-      </button>
-    `;
-      } else if (step === 2) {
-        if (titleEl) titleEl.textContent = "Step 2: Attendee Details";
-        body.innerHTML = `
-      <div style="display:flex;justify-content:space-between;align-items:center;background:var(--warm);padding:10px 14px;border-radius:8px;margin-bottom:18px;">
-        <div>
-          <span style="font-size:11.5px;color:var(--grey);font-family:var(--mono);text-transform:uppercase;">Selected Pass:</span>
-          <div style="font-weight:700;font-size:14px;color:var(--ink);">${t.passTitle} (${fmt(t.price)})</div>
-        </div>
-        <button onclick="goStep(1)" style="background:none;border:none;color:var(--red);font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:underline;font-weight:600;">
-          Change
-        </button>
-      </div>
-
-      <div class="field">
-        <label>Full Name (in English, as on your ID) *</label>
-        <input id="fName" value="${escAttr(cart.name)}" placeholder="e.g. Rahul Sharma" autocomplete="name" maxlength="100" />
-      </div>
-
-      <div class="row2">
-        <div class="field">
-          <label>Email Address *</label>
-          <input id="fEmail" type="email" value="${escAttr(cart.email)}" placeholder="you@email.com" autocomplete="email" />
-        </div>
-        <div class="field">
-          <label>Phone Number *</label>
-          <input id="fPhone" type="tel" value="${escAttr(cart.phone)}" placeholder="9876543210" autocomplete="tel" />
-        </div>
-      </div>
-
-      <p style="font-size:12px;color:var(--grey);margin-top:2px;margin-bottom:14px;">
-        Official tickets and event instructions will be delivered directly to this email and phone.
-      </p>
-
-      <div class="err" id="attErr">Please enter a valid full name, email, and 10-digit mobile number.</div>
-
-      <div style="display:flex;gap:10px;margin-top:16px;">
-        <button class="btn btn-ghost" style="flex:1;justify-content:center;" onclick="goStep(1)">
-          ← Back
-        </button>
-        <button id="paySubmitBtn" class="btn btn-primary" style="flex:2;justify-content:center;" onclick="submitAttendee()">
-          Proceed to Payment (${fmt(t.price)}) →
-        </button>
-      </div>
-    `;
-      }
-    }
-
-    /* Makes typed text safe to put back inside an input's value="..." */
-    function escAttr(text) {
-      return String(text ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-    }
-
-    /* Shows an error under the form and highlights the field it is about */
-    function showAttendeeError(message, field) {
-      const errEl = document.getElementById('attErr');
-      if (errEl) {
-        errEl.textContent = message;
-        errEl.classList.add('show');
-      }
-      ['fName', 'fEmail', 'fPhone'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.borderColor = '';
-      });
-      const inputId = { name: 'fName', email: 'fEmail', phone: 'fPhone' }[field];
-      const input = inputId && document.getElementById(inputId);
-      if (input) {
-        input.style.borderColor = 'var(--red)';
-        input.focus();
-      } else if (field === 'tierId') {
-        goStep(1);
-      }
-    }
-
-    /* ---------------- AFTER RAZORPAY PAYMENT ----------------
-       Razorpay sends the visitor back to this page with
-       ?razorpay_payment_link_status=paid&razorpay_payment_link_reference_id=<ticket id>...
-       Show a confirmation and clean the address bar. */
-    (function handlePaymentReturn() {
-      const params = new URLSearchParams(window.location.search);
-      const status = params.get('razorpay_payment_link_status');
-      if (!status) return;
-
-      const ref = params.get('razorpay_payment_link_reference_id') || '';
-      const code = /^[0-9a-f-]{36}$/i.test(ref) ? '#' + ref.replace(/-/g, '').slice(0, 8).toUpperCase() : '';
-      const paid = status === 'paid';
-
-      // Remove the payment details from the address bar (so a refresh doesn't show this again)
-      try { history.replaceState(null, '', window.location.pathname + window.location.hash); } catch (e) { }
-
-      const show = () => {
-        const overlay = document.getElementById('overlay');
-        const body = document.getElementById('modalBody');
-        const titleEl = document.getElementById('modalTitle');
-        const steps = document.querySelector('.modal .steps');
-        if (!overlay || !body) return;
-        if (steps) steps.style.display = 'none';
-        if (titleEl) titleEl.textContent = paid ? 'Payment Successful' : 'Payment Not Completed';
-
-        body.innerHTML = paid ? `
-      <div class="confirm-wrap">
-        <div class="confirm-x">&#10003;</div>
-        <h3 style="font-family:var(--display);font-size:22px;margin-bottom:10px;">You're in!</h3>
-        <p style="font-size:14px;color:var(--grey);line-height:1.6;">
-          Your payment was received. Your ticket with the entry QR code is being emailed to you now.
-          It usually arrives within a few minutes &mdash; please check your Spam / Promotions folder too.
-        </p>
-        ${code ? `<div class="ticket-id">Ticket reference: ${code}</div>` : ''}
-        <p style="font-size:12.5px;color:var(--grey);line-height:1.6;">
-          No email after 30 minutes? Write to us with your ticket reference.
-        </p>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" onclick="closeCheckout()">Done</button>
-      </div>` : `
-      <div class="confirm-wrap">
-        <div class="confirm-x">!</div>
-        <h3 style="font-family:var(--display);font-size:22px;margin-bottom:10px;">Payment not completed</h3>
-        <p style="font-size:14px;color:var(--grey);line-height:1.6;">
-          Your payment did not go through, so no ticket was booked. If money was deducted,
-          it is normally refunded automatically by your bank.
-        </p>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px;" onclick="restartCheckout()">Try again</button>
-      </div>`;
-        overlay.classList.add('show');
-      };
-
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show);
-      else show();
-    })();
-
-    /* Re-opens the normal 2-step checkout (shows the step dots again) */
-    function restartCheckout() {
-      const steps = document.querySelector('.modal .steps');
-      if (steps) steps.style.display = '';
-      openCheckout(cart.tierId);
-    }
-
-    async function submitAttendee() {
-      const nameEl = document.getElementById('fName');
-      const emailEl = document.getElementById('fEmail');
-      const phoneEl = document.getElementById('fPhone');
-      const errEl = document.getElementById('attErr');
-      const payBtn = document.getElementById('paySubmitBtn');
-
-      const name = nameEl ? nameEl.value.trim() : '';
-      const email = emailEl ? emailEl.value.trim() : '';
-      const phone = phoneEl ? phoneEl.value.trim() : '';
-
-      // Same rules as the server (api/checkout.js)
-      const phoneDigits = phone.replace(/\D/g, '');
-      let problem = null;
-      if (name.length < 2) problem = { field: 'name', msg: 'Please enter your full name.' };
-      else if (!/[A-Za-z].*[A-Za-z]/.test(name)) problem = { field: 'name', msg: 'Please enter your name in English letters (it is printed on your ticket).' };
-      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) problem = { field: 'email', msg: 'Please enter a valid email address. Your ticket will be sent here.' };
-      else if (!/^[0-9\s()+-]{7,20}$/.test(phone) || phoneDigits.length < 10 || phoneDigits.length > 13) problem = { field: 'phone', msg: 'Please enter a valid 10-digit mobile number.' };
-
-      if (problem) {
-        showAttendeeError(problem.msg, problem.field);
-        return;
-      }
-
-      if (errEl) errEl.classList.remove('show');
-      ['fName', 'fEmail', 'fPhone'].forEach(id => { const el = document.getElementById(id); if (el) el.style.borderColor = ''; });
-      cart.name = name;
-      cart.email = email;
-      cart.phone = phone;
-
-      if (payBtn) {
-        payBtn.disabled = true;
-        payBtn.textContent = 'Connecting to Payment...';
-        payBtn.style.opacity = '0.7';
-        payBtn.style.cursor = 'wait';
-      }
-
-      try {
-        const response = await fetch(
-          BACKEND_CONFIG.apiBaseUrl.replace(/\/$/, '') + BACKEND_CONFIG.checkoutEndpoint,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              tierId: cart.tierId,
-              quantity: 1,
-              attendee: { name: cart.name, email: cart.email, phone: cart.phone }
-            })
-          }
-        );
-
-        let result = {};
-        try { result = await response.json(); } catch (e) { /* non-JSON reply */ }
-        if (!response.ok || !result.paymentUrl) {
-          const err = new Error(result.error || 'Unable to start payment. Please try again.');
-          err.field = result.field;
-          throw err;
-        }
-
-        // Redirect attendee to Razorpay payment link
-        window.location.assign(result.paymentUrl);
-      } catch (error) {
-        console.error('Checkout error:', error);
-        const offline = error instanceof TypeError; // fetch failed: no internet / server unreachable
-        showAttendeeError(
-          offline ? 'Could not reach the payment server. Check your internet and try again.' : error.message,
-          error.field
-        );
-        if (payBtn) {
-          payBtn.disabled = false;
-          payBtn.textContent = `Proceed to Payment (${fmt(currentTier().price)}) →`;
-          payBtn.style.opacity = '1';
-          payBtn.style.cursor = 'pointer';
-        }
-      }
-    }
 
     /* ---------------- SCROLL REVEAL ANIMATIONS ---------------- */
     if ('IntersectionObserver' in window) {
