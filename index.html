@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEDxISME Bangalore — Invisible Barriers</title>
+  <title>TEDxISME Bangalore | Invisible Barriers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@200;300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
@@ -1042,19 +1042,25 @@
       }
 
       .core-box:nth-child(8) {
-        grid-column: 4 / span 6;
+        grid-column: 1 / span 6;
         grid-row: 3;
         margin-inline: 11px;
       }
 
       .core-box:nth-child(9) {
-        grid-column: 10 / span 6;
+        grid-column: 7 / span 6;
         grid-row: 3;
         margin-inline: 11px;
       }
 
       .core-box:nth-child(10) {
-        grid-column: 16 / span 6;
+        grid-column: 13 / span 6;
+        grid-row: 3;
+        margin-inline: 11px;
+      }
+
+      .core-box:nth-child(11) {
+        grid-column: 19 / span 6;
         grid-row: 3;
         margin-inline: 11px;
       }
@@ -1243,7 +1249,7 @@
       display: flex;
       gap: 24px;
       width: max-content;
-      animation: scroll-sponsor 26s linear infinite;
+      animation: scroll-sponsor 42s linear infinite;
       will-change: transform;
     }
 
@@ -1277,10 +1283,90 @@
       display: block;
     }
 
+    /* Sponsor logo cards (dark, matches the core-team cards) */
+    .sponsor-card {
+      display: flex;
+      flex-direction: column;
+      background: radial-gradient(120% 95% at 50% 28%, #1E1E26 0%, #121217 55%, #0B0B0E 100%);
+      position: relative;
+    }
+
+    .sponsor-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(235, 0, 40, 0.55), rgba(255, 255, 255, 0.08) 60%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .sponsor-logo-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 24px 8px;
+      min-height: 0;
+    }
+
+    .sponsor-logo {
+      max-height: 124px;
+      max-width: 82%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+    }
+
+    .sponsor-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 18px 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sponsor-name {
+      font-family: var(--body);
+      font-weight: 800;
+      font-size: 14px;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sponsor-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
     @media (max-width: 640px) {
       .sponsor-slide-item {
         width: 260px;
         height: 165px;
+      }
+
+      .sponsor-logo {
+        max-height: 84px;
+      }
+
+      .sponsor-meta {
+        padding: 9px 14px 11px;
+      }
+
+      .sponsor-name {
+        font-size: 12.5px;
       }
     }
 
@@ -2228,7 +2314,7 @@
           <p>TEDx is a program of local, self-organized events that bring people together to share a TED-like
             experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and
             connection. TEDxISME Bangalore is one such independently organized event, produced under a free license
-            granted by TED — with content, speakers and staging shaped entirely by our own team, not TED itself.</p>
+            granted by TED, with content, speakers and staging shaped entirely by our own team, not TED itself.</p>
           <ul class="rule-list">
             <li>Community-driven, not commercial or political</li>
             <li>A diversity of topics and voices, not a single field</li>
@@ -2238,7 +2324,7 @@
         <div>
           <h3>Why ISME, why now</h3>
           <p>ISME Bangalore has hosted conversations on business, design and society for over a decade. TEDxISME extends
-            that tradition onto a global format — pairing our campus community with voices from science, art, policy and
+            that tradition onto a global format, pairing our campus community with voices from science, art, policy and
             enterprise who rarely share a stage. This edition's theme, <strong>"Invisible Barriers,"</strong> asks five
             speakers to challenge one assumption each of us is carrying into the next decade.</p>
           <ul class="rule-list">
@@ -2309,10 +2395,10 @@
       <div class="section-head reveal">
         <p class="eyebrow">Sponsors &amp; Partners</p>
         <h2>Made possible with</h2>
-        <p>TEDx events run on community support, not ticket profit — sponsorship covers venue, production and speaker
+        <p>TEDx events run on community support, not ticket profit. Sponsorship covers venue, production and speaker
           hospitality.</p>
       </div>
-      <!-- Infinite Auto-Slider Container (5 Coming Soon Slides in Seamless Loop) -->
+      <!-- Infinite Auto-Slider Container (sponsor logos in a seamless loop) -->
       <div class="sponsor-scroll-container reveal" id="sponsorSliderContainer" role="region"
         aria-label="Sponsors and partners marquee">
         <div class="sponsor-infinite-scroll" id="sponsorSliderTrack"></div>
@@ -2326,7 +2412,7 @@
       <div class="section-head reveal">
         <p class="eyebrow">Tickets</p>
         <h2>Reserve your seat</h2>
-        <p>All tickets are priced at cost, in line with TEDx guidelines — no profit is made on ticket sales.</p>
+        <p>All tickets are priced at cost, in line with TEDx guidelines, so no profit is made on ticket sales.</p>
       </div>
       <div class="ticket-grid reveal" id="ticketGrid"></div>
     </div>
@@ -2370,7 +2456,7 @@
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
-            <a href="mailto:manasar@gmail.com">manasar@isme.in</a>
+            <a href="mailto:manasar@isme.in">manasar@isme.in</a>
             <a href="tel:+919731491531">9731491531</a>
           </div>
           <div class="footer-col footer-col-map">
@@ -2437,7 +2523,7 @@
       </div>
       <div class="footer-bottom">
         <span>This independent TEDx event is operated under license from TED.</span>
-        <span>© 2026 TEDxISME Bangalore — Sample landing page for demonstration.</span>
+        <span>© 2026 TEDxISME Bangalore · Sample landing page for demonstration.</span>
       </div>
     </div>
   </footer>
@@ -2519,7 +2605,7 @@
           </svg>
         </span>
       </a>
-      <a href="mailto:manasar@gmail.com" class="dock-item" aria-label="Contact">
+      <a href="mailto:manasar@isme.in" class="dock-item" aria-label="Contact">
         <span class="dock-label">Email</span>
         <span class="dock-icon">
           <svg viewBox="0 0 24 24">
@@ -2858,19 +2944,19 @@
 
     const schedule = [
       { t: "8:30 AM – 9:15 AM", title: "Registration", d: "Delegate check-in, badge collection & morning welcome" },
-      { t: "9:15 AM – 9:45 AM", title: "School Principal Interaction — Dr. Manasa R", d: "Interactive morning session with school principals and academic leaders" },
-      { t: "9:45 AM – 10:15 AM", title: "School Principal Interaction — Dr. Purnajit", d: "Academic leadership exchange and institutional perspective session" },
-      { t: "10:30 AM – 10:35 AM", title: "Welcome Speech — Ms. Pallavi Jain", d: "Official opening remarks & introduction to TEDxISME Bangalore" },
+      { t: "9:15 AM – 9:45 AM", title: "School Principal Interaction - Dr. Manasa R", d: "Interactive morning session with school principals and academic leaders" },
+      { t: "9:45 AM – 10:15 AM", title: "School Principal Interaction - Dr. Purnajit", d: "Academic leadership exchange and institutional perspective session" },
+      { t: "10:30 AM – 10:35 AM", title: "Welcome Speech - Ms. Pallavi Jain", d: "Official opening remarks & introduction to TEDxISME Bangalore" },
       { t: "10:40 AM – 10:45 AM", title: "TEDx Mandatory Video", d: "Official TEDx global introductory screening" },
       { t: "10:45 AM – 11:05 AM", title: "Samaira Garg", d: "Speaker Session · Founder, Made Again & Student Researcher" },
-      { t: "11:30 AM – 11:50 AM", title: "Dr. Nitin Garg", d: "Speaker Session · Founding Director, ISME Bangalore" },
+      { t: "11:30 AM – 11:50 AM", title: "Padma Parthasarathy", d: "Speaker Session · Independent Director & Corporate Leader" },
       { t: "11:55 AM – 12:05 PM", title: "Skit 1", d: "Creative theatrical performance on breaking invisible barriers" },
-      { t: "12:10 PM – 12:30 PM", title: "Padma Parthasarathy", d: "Speaker Session · Independent Director & Corporate Leader" },
+      { t: "12:10 PM – 12:30 PM", title: "Dr. Nitin Garg", d: "Speaker Session · Founding Director, ISME Bangalore" },
       { t: "12:35 PM – 12:55 PM", title: "Dr. Apurva Mittal", d: "Speaker Session · Consultant Psychiatrist & NIMHANS Fellow" },
       { t: "12:55 PM – 1:05 PM", title: "Skit 2", d: "Theatrical presentation and artistic interlude" },
       { t: "1:10 PM – 1:30 PM", title: "Dr. Sibichen K Mathew", d: "Speaker Session · Former Director General, IRS & Author" },
       { t: "1:30 PM – 1:35 PM", title: "BTS (Behind the Scenes)", d: "Special video screening celebrating the organizing team & volunteers" },
-      { t: "1:35 PM – 1:40 PM", title: "Vote of Thanks — Dr. Manasa R", d: "Concluding expressions of gratitude to speakers, dignitaries & delegates" },
+      { t: "1:35 PM – 1:40 PM", title: "Vote of Thanks - Dr. Manasa R", d: "Concluding expressions of gratitude to speakers, dignitaries & delegates" },
       { t: "1:40 PM – 1:46 PM", title: "National Anthem AV", d: "Audiovisual presentation and solemn observance of the National Anthem" },
       { t: "1:45 PM – 2:30 PM", title: "Lunch", d: "Curated networking lunch & refreshments for attendees and guests" }
     ];
@@ -2962,6 +3048,7 @@
       { name: "Akankshya Das", img: "photos students/Akankshya Das.jpeg", role: "Core Team" },
       { name: "Koushik Sarmah", img: "photos students/Koushik Sarmah.png", role: "Core Team" },
       { name: "Aman Kumar", img: "photos students/Aman Kumar.png", role: "Core Team" },
+      { name: "Shivam", img: "photos students/Shivam.jpeg", role: "Core Team" },
     ];
 
     (function initCoreBoxes() {
@@ -2992,84 +3079,32 @@
     })();
 
     /* ---------------- SPONSORS & PARTNERS (INFINITE AUTO-SLIDER) ---------------- */
-    const sponsorComingSoonSlides = [
-      {
-        tier: "TITLE SPONSOR",
-        title: "WILL COME SOON",
-        sub: "TEDxISME Bangalore · 2026",
-        accent: "#EB0028"
-      },
-      {
-        tier: "INNOVATION PARTNER",
-        title: "WILL COME SOON",
-        sub: "TEDxISME Bangalore · 2026",
-        accent: "#C9A227"
-      },
-      {
-        tier: "COMMUNITY PARTNER",
-        title: "WILL COME SOON",
-        sub: "TEDxISME Bangalore · 2026",
-        accent: "#EB0028"
-      },
-      {
-        tier: "MEDIA PARTNER",
-        title: "WILL COME SOON",
-        sub: "TEDxISME Bangalore · 2026",
-        accent: "#C9A227"
-      },
-      {
-        tier: "EXPERIENCE PARTNER",
-        title: "WILL COME SOON",
-        sub: "TEDxISME Bangalore · 2026",
-        accent: "#EB0028"
-      }
+    const sponsors = [
+      { name: "AOJAAS", logo: "Photo-Sponser/aojaas.png" },
+      { name: "MaaStellar Ventures", logo: "Photo-Sponser/maastellar-ventures.png" },
+      { name: "Singh Enterprises", logo: "Photo-Sponser/singh-enterprises.png" },
+      { name: "Sree KNM Group of Companies", logo: "Photo-Sponser/sree-knm.png" }
     ];
-
-    function createSponsorSvg(slide, idx) {
-      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'>
-    <defs>
-      <linearGradient id='bg_${idx}' x1='0%' y1='0%' x2='100%' y2='100%'>
-        <stop offset='0%' stop-color='#17171D'/>
-        <stop offset='100%' stop-color='#0B0B0E'/>
-      </linearGradient>
-      <linearGradient id='grad_${idx}' x1='0%' y1='0%' x2='100%' y2='0%'>
-        <stop offset='0%' stop-color='${slide.accent}' stop-opacity='0.6'/>
-        <stop offset='100%' stop-color='#ffffff' stop-opacity='0.15'/>
-      </linearGradient>
-    </defs>
-    <rect width='640' height='400' rx='22' fill='url(#bg_${idx})'/>
-    <rect x='1.5' y='1.5' width='637' height='397' rx='20.5' fill='none' stroke='url(#grad_${idx})' stroke-width='2'/>
-    
-    <!-- Accent icon glow -->
-    <circle cx='320' cy='135' r='46' fill='${slide.accent}' fill-opacity='0.12'/>
-    <circle cx='320' cy='135' r='30' fill='none' stroke='${slide.accent}' stroke-width='2.5' stroke-dasharray='4 4'/>
-    <path d='M320 120v30M305 135h30' stroke='${slide.accent}' stroke-width='3.5' stroke-linecap='round'/>
-    
-    <!-- Tier Category -->
-    <text x='320' y='225' font-family='system-ui, -apple-system, sans-serif' font-size='20' font-weight='800' fill='#ffffff' text-anchor='middle' letter-spacing='2.5'>${slide.tier}</text>
-    
-    <!-- WILL COME SOON announcement badge -->
-    <rect x='195' y='255' width='250' height='42' rx='10' fill='${slide.accent}' fill-opacity='0.15' stroke='${slide.accent}' stroke-width='1.5'/>
-    <text x='320' y='282' font-family='monospace' font-size='15' font-weight='700' fill='${slide.accent}' text-anchor='middle' letter-spacing='3'>${slide.title}</text>
-    
-    <!-- Subtitle -->
-    <text x='320' y='345' font-family='monospace' font-size='12' font-weight='500' fill='#7A7A8C' text-anchor='middle' letter-spacing='1.5'>${slide.sub}</text>
-  </svg>`;
-      return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-    }
 
     (function initSponsorSlider() {
       const track = document.getElementById('sponsorSliderTrack');
       if (!track) return;
 
-      // 5 slides
-      const slides = sponsorComingSoonSlides.map((s, i) => createSponsorSvg(s, i));
-      // Duplicate for seamless infinite loop (10 items total)
-      const duplicatedSlides = [...slides, ...slides];
+      // Repeat the list so one half of the track is wider than the screen, then double it
+      // for a seamless loop (the animation slides exactly one half to the left).
+      const half = [...sponsors, ...sponsors];
+      const items = [...half, ...half];
 
-      track.innerHTML = duplicatedSlides.map((src, i) => `
-    <div class="sponsor-slide-item" tabindex="0" aria-label="Sponsor slide ${(i % slides.length) + 1}">
-      <img class="sponsor-slide-img" src="${src}" alt="Sponsor announcement - Will come soon" loading="lazy" />
+      track.innerHTML = items.map((sp, i) => `
+    <div class="sponsor-slide-item sponsor-card" tabindex="${i < sponsors.length ? 0 : -1}"
+         aria-label="${sp.name}"${i >= sponsors.length ? ' aria-hidden="true"' : ''}>
+      <div class="sponsor-logo-wrap">
+        <img class="sponsor-logo" src="${encodeURI(sp.logo)}" alt="${sp.name} logo" loading="lazy" />
+      </div>
+      <div class="sponsor-meta">
+        <span class="sponsor-name">${sp.name}</span>
+        <span class="sponsor-tag">Sponsor</span>
+      </div>
     </div>
   `).join('');
     })();
@@ -3185,7 +3220,7 @@
     }
 
     const faqs = [
-      { q: "Can I get a refund?", a: "Tickets are transferable up to 48 hours before the event. Refunds are handled case-by-case — write to manasar@gmail.com." },
+      { q: "Can I get a refund?", a: "Tickets are transferable up to 48 hours before the event. Refunds are handled case-by-case. Write to manasar@isme.in." },
       { q: "Is there parking on campus?", a: "Yes, limited visitor parking is available on a first-come basis; carpooling is encouraged." },
     ];
     document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
