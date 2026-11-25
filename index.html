@@ -999,70 +999,15 @@
         row-gap: 22px;
       }
 
+      /* every card spans 6 of 24 columns; starting card 1 at column 4 centres the first row
+         of 3, and the grid then wraps automatically into rows of 4 */
+      .core-box {
+        grid-column: span 6;
+        margin-inline: 11px;
+      }
+
       .core-box:nth-child(1) {
         grid-column: 4 / span 6;
-        grid-row: 1;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(2) {
-        grid-column: 10 / span 6;
-        grid-row: 1;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(3) {
-        grid-column: 16 / span 6;
-        grid-row: 1;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(4) {
-        grid-column: 1 / span 6;
-        grid-row: 2;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(5) {
-        grid-column: 7 / span 6;
-        grid-row: 2;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(6) {
-        grid-column: 13 / span 6;
-        grid-row: 2;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(7) {
-        grid-column: 19 / span 6;
-        grid-row: 2;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(8) {
-        grid-column: 1 / span 6;
-        grid-row: 3;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(9) {
-        grid-column: 7 / span 6;
-        grid-row: 3;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(10) {
-        grid-column: 13 / span 6;
-        grid-row: 3;
-        margin-inline: 11px;
-      }
-
-      .core-box:nth-child(11) {
-        grid-column: 19 / span 6;
-        grid-row: 3;
-        margin-inline: 11px;
       }
     }
 
@@ -1274,13 +1219,6 @@
       filter: brightness(1.08);
       border-color: rgba(235, 0, 40, 0.6);
       box-shadow: 0 20px 45px rgba(235, 0, 40, 0.25), 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .sponsor-slide-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
     }
 
     /* Sponsor logo cards (dark, matches the core-team cards) */
@@ -2558,7 +2496,7 @@
           <svg viewBox="0 0 24 24">
             <path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" />
             <path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" />
-            <path d="18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" />
+            <path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" />
             <path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" />
           </svg>
         </span>
@@ -2624,31 +2562,31 @@
         n: "Dr. Nitin Garg",
         role: "Founding Director, ISME Bangalore · IIT Bombay, CMU & IIM Lucknow",
         description: "Dr. Nitin Garg holds an MBA from Tepper School of Business at Carnegie Mellon University (USA), B.Tech and M.Tech in Mechanical Engineering from IIT Bombay, and a Ph.D. from IIM Lucknow. Founding Director of ISME Bangalore, he was honored with the International Achievers Award for Education Excellence. Formerly a senior leader at Deloitte Consulting in Philadelphia, he advises enterprise leaders on strategy, technology, and organizational transformation.",
-        photo: "Speaker/Dr. Nitin Garg.png"
+        photo: "Speaker/Dr. Nitin Garg.jpeg"
       },
       {
         n: "Padma Parthasarathy",
         role: "Independent Director & Corporate Leader · Forbes Self-Made Women List",
         description: "Padma Parthasarathy is an Independent Director and senior corporate leader with nearly 40 years of global experience in digital transformation, consulting, technology, and corporate strategy. An alumna of IIM Ahmedabad and former leader of Global Consulting and Digital businesses at Tech Mahindra, she serves on boards including TNS India Foundation and Action NorthEast Trust, and was recognized on Forbes India's Women Power list.",
-        photo: "Speaker/Padma Parthasarathy.png"
+        photo: "Speaker/Padma Parthasarathy.jpeg"
       },
       {
         n: "Dr. Sibichen K. Mathew",
         role: "Former Director General, IRS · Author, Cybercrime & Governance Expert",
         description: "Sibichen Mathew is a former Director General in the Indian Revenue Service (IRS), holding a Ph.D. in Sociology/Public Finance, an LLB, and an IIM Bangalore postgraduate qualification. An acclaimed author and TEDx speaker, his published works include 'You Just Got Cheated', 'When the Boss Is Wrong', and 'Making People Pay'. He is a Distinguished Toastmaster and recognized authority on white-collar crime and governance.",
-        photo: "Speaker/Sibichen Mathew.png"
+        photo: "Speaker/Sibichen Mathew.jpeg"
       },
       {
         n: "Dr. Apurva Mittal",
         role: "Consultant Psychiatrist & NIMHANS Fellow · Amaha Health",
         description: "Dr. Apurva Mittal is a Bengaluru-based psychiatrist with 9 years of experience practicing at Amaha Health. Having completed her senior residency and fellowship at NIMHANS, her clinical work focuses on dementia, mild cognitive impairment, non-invasive brain stimulation, adult ADHD, mood disorders, and women’s mental health. She actively contributes to community mental health awareness and evidence-based patient advocacy.",
-        photo: "Speaker/Dr. Apurva Mittal.png"
+        photo: "Speaker/Dr. Apurva Mittal.jpeg"
       },
       {
         n: "Samaira Garg",
         role: "Founder, Made Again · Student Researcher & John Locke Prize Awardee",
         description: "Samaira Garg is the founder of Made Again, an impactful sustainability initiative, a student researcher, and a John Locke Essay Prize awardee. Her work examines the intersection of education, inequality, and opportunity. Through Made Again and her independent research with migrant workers in Bengaluru, she explores socio-economic disparities and challenges conventional assumptions to dismantle invisible barriers.",
-        photo: "Speaker/Samaira-Garg.png"
+        photo: "Speaker/Samaira-Garg.jpeg"
       }
     ];
 
@@ -2973,41 +2911,41 @@
       {
         name: "Dr. Nitin Garg",
         role: "Founder - Director",
-        img: "photos teachers/Dr. Nitin-Garg: Founder- Director.png"
+        img: "photos teachers/Dr. Nitin Garg.webp"
       },
       {
         name: "Pallavi Jain",
         role: "Organiser",
-        img: "photos teachers/Pallavi-Jain:Organiser.png"
+        img: "photos teachers/Pallavi Jain.webp"
       },
 
       {
         name: "Dr. Rony G Kurien",
         role: "Dean - ISME",
-        img: "photos teachers/Dr. Rony_g_Kurien:Dean-ISME.png"
+        img: "photos teachers/Dr. Rony G Kurien.webp"
       },
       {
         name: "Dr. Purnajit Chatterjee",
         role: "Head - External",
-        img: "photos teachers/Dr.-PURNAJIT-CHATTERJEE: Head-External.png"
+        img: "photos teachers/Dr. Purnajit Chatterjee.webp"
       },
 
       {
         name: "Dr. Manasa R",
         role: "Co-Organiser",
-        img: "photos teachers/Dr. Manasa-R: Co-Organiser.png"
+        img: "photos teachers/Dr. Manasa R.webp"
       },
 
       {
         name: "Dr. Prakasha T M",
         role: "Admin Support",
-        img: "photos teachers/Dr. Prakasha T M.png"
+        img: "photos teachers/Dr. Prakasha T M.webp"
       },
 
       {
         name: "Manoj Kumar",
         role: "IT Support",
-        img: "photos teachers/Manoj Kumar.png"
+        img: "photos teachers/Manoj Kumar.webp"
       },
 
     ];
@@ -3038,17 +2976,17 @@
 
     /* ---------------- OUR PEOPLE: INTERACTIVE CORE TEAM REVEAL ---------------- */
     const coreMembers = [
-      { name: "Pranathi Reddy", img: "photos students/Pranathi B. Reddy.png", role: "Core Team" },
       { name: "Harsh Binaikia", img: "photos students/Harsh.jpeg", role: "Core Team" },
-      { name: "Saumya Dutta", img: "photos students/Soumya Dutta.png", role: "Core Team" },
-      { name: "Saif Ahmad", img: "photos students/Saif Ahmed.png", role: "Core Team" },
-      { name: "Parul Dhiman", img: "photos students/Parul.png", role: "Core Team" },
-      { name: "Chaitanya Ram Nirujogi", img: "photos students/Chaitanya.png", role: "Core Team" },
-      { name: "Aman Kumar Seth", img: "photos students/Aman Seth.png", role: "Core Team" },
-      { name: "Akankshya Das", img: "photos students/Akankshya Das.jpeg", role: "Core Team" },
-      { name: "Koushik Sarmah", img: "photos students/Koushik Sarmah.png", role: "Core Team" },
-      { name: "Aman Kumar", img: "photos students/Aman Kumar.png", role: "Core Team" },
-      { name: "Shivam", img: "photos students/Shivam.jpeg", role: "Core Team" },
+      { name: "Saumya Dutta", img: "photos students/Soumya Dutta.jpeg", role: "Core Team" },
+      { name: "Saif Ahmad", img: "photos students/Saif Ahmed.jpeg", role: "Core Team" },
+      { name: "Parul Dhiman", img: "photos students/Parul.jpeg", role: "Core Team" },
+      { name: "Chaitanya Ram Nirujogi", img: "photos students/Chaitanya.jpeg", role: "Core Team" },
+      { name: "Aman Kumar Seth", img: "photos students/Aman Seth.jpeg", role: "Core Team" },
+      { name: "Koushik Sarmah", img: "photos students/Koushik Sarmah.jpeg", role: "Core Team" },
+      { name: "Aman Kumar", img: "photos students/Aman Kumar.jpeg", role: "Core Team" },
+      { name: "Shivam Arora", img: "photos students/Shivam.jpeg", role: "Core Team" },
+      { name: "Araj Sachan", img: "photos students/Araj Sachan.jpeg", role: "Core Team" },
+      { name: "Gornelli Rishik", img: "photos students/Gornelli Rishik.jpeg", role: "Core Team" },
     ];
 
     (function initCoreBoxes() {
