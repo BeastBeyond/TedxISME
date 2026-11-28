@@ -2200,6 +2200,33 @@
         height: 38px;
       }
     }
+
+    /* ---------- SOLD OUT (registrations closed) ---------- */
+    .sold-out-wrap { position: relative; }
+    .sold-out-wrap::before { animation: none !important; background: #cfcfcf !important; }
+    .sold-out-wrap:hover { transform: none; }
+    .sold-out-wrap .combined-tiers-grid { filter: grayscale(1); opacity: 0.5; pointer-events: none; user-select: none; }
+    .sold-out-wrap .pricing-card { box-shadow: none !important; }
+    .sold-out-stamp {
+      position: absolute; top: 50%; left: 50%; z-index: 5;
+      transform: translate(-50%, -60%) rotate(-8deg);
+      font-family: var(--display); font-size: clamp(40px, 8vw, 84px); letter-spacing: 0.06em;
+      color: var(--red); border: 6px solid var(--red); border-radius: 16px;
+      padding: 6px 28px; background: rgba(255, 255, 255, 0.92);
+      text-transform: uppercase; white-space: nowrap; pointer-events: none;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+    .sold-out-banner {
+      max-width: 440px; width: 100%; padding: 16px 36px; border-radius: 14px;
+      background: #e9e9e9; color: #6b6b6b; font-size: 15px; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase; text-align: center; cursor: not-allowed;
+    }
+    .btn.btn-soldout {
+      background: #e2e2e2; color: #777; border-color: #d0d0d0; cursor: not-allowed; box-shadow: none;
+    }
+    .btn.btn-soldout:hover { transform: none; }
+    .dock-item.dock-cta.dock-soldout { background: rgba(120, 120, 120, 0.85); border-color: #888; }
+    .dock-item.dock-cta.dock-soldout:hover { background: #777; }
   </style>
 </head>
 
@@ -2233,7 +2260,7 @@
         <div><span>Capacity</span>100 seats</div>
       </div>
       <div class="hero-actions anim-fade-up d6">
-        <a href="#tickets" class="btn btn-primary">Get Tickets →</a>
+        <span class="btn btn-soldout" aria-disabled="true">Sold Out · Registrations Closed</span>
         <a href="#speakers" class="btn btn-ghost">Meet the Speakers</a>
       </div>
     </div>
@@ -2349,8 +2376,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">Tickets</p>
-        <h2>Reserve your seat</h2>
-        <p>All tickets are priced at cost, in line with TEDx guidelines, so no profit is made on ticket sales.</p>
+        <h2>Registrations closed</h2>
+        <p>All seats for TEDxISME Bangalore 2026 are sold out. Thank you to everyone who registered. See you on 28 November!</p>
       </div>
       <div class="ticket-grid reveal" id="ticketGrid"></div>
     </div>
@@ -2389,7 +2416,7 @@
           </div>
           <div class="footer-col">
             <h4>Tickets</h4>
-            <a href="#tickets">Buy tickets</a>
+            <a href="#tickets">Sold out</a>
             <a href="#faq">FAQ</a>
           </div>
           <div class="footer-col">
@@ -2520,8 +2547,8 @@
           </svg>
         </span>
       </a>
-      <a href="#tickets" class="dock-item dock-cta" aria-label="Get Tickets">
-        <span class="dock-label">Get Tickets</span>
+      <a href="#tickets" class="dock-item dock-cta dock-soldout" aria-label="Sold Out">
+        <span class="dock-label">Sold Out</span>
         <span class="dock-icon">
           <svg viewBox="0 0 24 24">
             <path
@@ -3107,7 +3134,8 @@
     const ticketGridEl = document.getElementById('ticketGrid');
     if (ticketGridEl) {
       ticketGridEl.innerHTML = `
-  <div class="pricing-card-wrap featured combined-card-wrap">
+  <div class="pricing-card-wrap featured combined-card-wrap sold-out-wrap" aria-label="Sold out">
+    <div class="sold-out-stamp">Sold Out</div>
     <div class="pricing-card combined-pricing-card">
       <div class="combined-tiers-grid">
         ${TIERS.map(t => `
@@ -3144,11 +3172,9 @@
         `).join('')}
       </div>
       <div class="combined-action-footer">
-        <a href="${PAYMENT_LINKS[selectedCombinedTier]}" target="_blank" rel="noopener noreferrer" class="pricing-btn combined-buy-btn" id="combinedBuyBtn">
-          Buy Now →
-        </a>
+        <div class="sold-out-banner">Registrations Closed</div>
         <p class="combined-action-note">
-          Official PayU checkout · Instant seat reservation
+          All passes are sold out · Thank you for the overwhelming response
         </p>
       </div>
     </div>
